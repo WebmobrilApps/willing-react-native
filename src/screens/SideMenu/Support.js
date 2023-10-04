@@ -5,13 +5,13 @@ import commonStyles from '../../styles/commonStyles'
 import AppTextInput from '../../components/AppTextInput'
 import TextInputComp from '../../components/TextInputComp'
 import fontFamily from '../../styles/fontFamily'
-import { verticalScale } from '../../styles/Scale'
+import Scale, { verticalScale } from '../../styles/Scale'
 import CustomBtn from '../../components/CustomBtn'
 
 const Support = () => {
   return (
     <SafeAreaView style={commonStyles.mainContainer}>
-      <View style={styles.container}>
+      <View style={[commonStyles.mainContainer,{padding:Scale(30)}]}>
         <AppTextInput
         placeholder={'Full Name'}/>
         <AppTextInput

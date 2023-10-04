@@ -21,7 +21,7 @@ const PostPage = (props) => {
             <FlatList
                 ItemSeparatorComponent={() => {
                     return (
-                        <ItemSeperator />
+                        <ItemSeperator seperatorStyle={{marginBottom:verticalScale(15)}}/>
                     )
                 }}
                 data={data}

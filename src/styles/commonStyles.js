@@ -136,6 +136,11 @@ export default StyleSheet.create({
     height: "100%",
     alignItems: "center",
     justifyContent: 'center'
-  },
+  }, newRequestChooseCategory: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    paddingHorizontal: Scale(10),
+  }
 
 })

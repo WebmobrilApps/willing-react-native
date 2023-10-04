@@ -37,9 +37,10 @@ const Category = (props) => {
 
   return (
     <SafeAreaView style={commonStyles.mainContainer}>
-        <View style={[commonStyles.mainContainer,{padding:Scale(20)}]}>
-        <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>Choose about which categories you will want to get 
+        <View style={[commonStyles.mainContainer]}>
+        <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium,margin:Scale(20),marginHorizontal:Scale(25) }]}>Choose about which categories you will want to get 
         notifications</Text>
+        <View style={commonStyles.newRequestChooseCategory}>{renderCategories()}</View>
         </View>
     </SafeAreaView>
   )

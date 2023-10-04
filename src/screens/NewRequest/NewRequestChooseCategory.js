@@ -44,8 +44,7 @@ const NewRequestChooseCategory = (props) => {
 
   return (
     <View>
-      <View style={styles.newRequestChooseCategory}>{renderCategories()}</View>
-
+      <View style={commonStyles.newRequestChooseCategory}>{renderCategories()}</View>
       <CustomBtn
         btnStyle={{
           width: '70%',
