@@ -32,7 +32,7 @@ const NewRequestContact = () => {
       <TouchableOpacity onPress={() => onPressRadioBtn('someOneElse')}
         style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
         <View style={commonStyles.circle}>
-          {value == 'someOneElse' ? <View style={styles.checkBox}>
+          {value == 'someOneElse' ? <View style={commonStyles.checkBox}>
           </View> : null}
         </View>
         <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Request on behalf of someone else</Text>

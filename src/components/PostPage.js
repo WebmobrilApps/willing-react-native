@@ -27,7 +27,7 @@ const PostPage = (props) => {
                 data={data}
                 renderItem={({ item }) => {
                     return (
-                        <TouchableOpacity onPress={() => minePosts ? navigation.navigate(screensNames.postDetails, { item, screenName: 'minPosts' }) : navigation.navigate(screensNames.postDetails, { item })}
+                        <TouchableOpacity onPress={() => minePosts ? navigation.navigate(screensNames.postDetails, { item, screenName: 'minPosts' }) : navigation.navigate(screensNames.postDetails, { item,screenName: 'otherpages' })}
                             style={styles.postContainer}>
                             <View style={[commonStyles.flexView, { justifyContent: 'flex-start', paddingHorizontal: Scale(20) }]}>
                                 <Image source={item.icon} style={styles.iconStyle} />

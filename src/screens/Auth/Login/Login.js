@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import WrapperContainer from '../../../components/WrapperContainer'
 import styles from './styles'
@@ -12,22 +12,41 @@ import CustomBtn from '../../../components/CustomBtn'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import colors from '../../../styles/colors'
 import screensNames from '../../../constants/screensNames'
+import countries from '../../../constants/countries.json';
+import { logInUser } from '../../../redux/actions/auth'
+import { validators } from '../../../utility/validationFunctions'
+import { useNavigation } from '@react-navigation/native'
+
 
 
 const Login = (props) => {
-  const [isFocus, setIsFocus] = useState(false);
-  const [value, setValue] = useState(null);
+  const navigation = useNavigation()
+  const initCountry = countries.countries.find((item) => item.code == "+972");
+  console.log('intial country',initCountry);
 
-  const data = [
-    { label: 'Item 1', value: '1' },
-    { label: 'Item 2', value: '2' },
-    { label: 'Item 3', value: '3' },
-    { label: 'Item 4', value: '4' },
-    { label: 'Item 5', value: '5' },
-    { label: 'Item 6', value: '6' },
-    { label: 'Item 7', value: '7' },
-    { label: 'Item 8', value: '8' },
-  ];
+  const [country, setCountry] = useState(initCountry.name+" (" + initCountry.code + ")");
+  const [countryCode, setCountryCode] = useState(initCountry.code)
+  const [mobile, setMobile] = useState('')
+  const [terms, setTerms] = useState(false)
+
+  const renderItem = item => {
+    return (
+      <View style={styles.renderItem}>
+        <Text style={commonStyles.fontSize12}>{item.name + " (" + item.code + ")"} </Text>
+      </View>
+    );
+  };
+
+  console.log('country list',country);
+
+  const onSubmit =  () => {
+    if (validators.checkRequire("Country", country) &&
+      (validators.checkNumber('Mobile number', 5, 15, mobile)) &&
+      validators.checkAccept('terms and conditions', terms)) {
+      logInUser(country,countryCode, mobile, navigation)
+    }
+  }
+
   return (
     <WrapperContainer wrapperStyle={styles.container}>
     <KeyboardAwareScrollView
@@ -39,7 +58,7 @@ const Login = (props) => {
         showsVerticalScrollIndicator={false}>
       <Image source={imagePath.logo} style={styles.logoStyle} />
       <Dropdown
-        style={[styles.dropdown, { marginRight: Scale(5) }]}
+        style={[styles.dropdown]}
         placeholderStyle={styles.placeholderStyle}
         selectedTextStyle={styles.selectedTextStyle}
         inputSearchStyle={styles.inputSearchStyle}
@@ -47,34 +66,39 @@ const Login = (props) => {
         containerStyle={styles.containerStyle}
         itemContainerStyle={styles.itemContainerStyle}
         itemTextStyle={commonStyles.fontSize12}
-        data={data}
+        data={countries.countries}
         selectedTextProps={{
           numberOfLines: 1,
 
         }}
-        maxHeight={300}
-        //   renderItem={renderItem}
-        labelField="label"
-        valueField="value"
+        // maxHeight={300}
+          renderItem={renderItem}
+        labelField="name"
+        valueField="code"
         imageField='image'
-        placeholder={!isFocus ? 'Select item' : '...'}
+        placeholder={country}
         searchPlaceholder="Search..."
-        value={value}
+        value={country}
         onChange={item => {
-          setValue(item.value);
-          setIsFocus(false);
+          setCountry(item.name + " (" + item.code + ")");
+          setCountryCode(item.code)
+          // setIsFocus(false);
 
         }}
       />
       <AppTextInput
+        keyboardType={'number-pad'}
+        onChangeText={(txt) => setMobile(txt)}
         placeholder={strings.MOBILE_NUMBER} />
         <View style={[commonStyles.flexView,{flex:1,width:'100%',justifyContent:'flex-start'}]}>
-        <View style={styles.checkContainer}>
-        </View>
+        <TouchableOpacity onPress={() => setTerms(!terms)}
+        style={styles.checkContainer}>
+          {!! terms ? <Image source={imagePath.check} style={styles.checkIconStyle}/> :null }
+        </TouchableOpacity>
         <Text style={commonStyles.fontSize10}>I confirm that I have read and I agree to <Text style={{color:colors.theme}}>terms {'\n'}and conditions.</Text></Text>
         </View>
         <CustomBtn
-        callBack={() => props.navigation.navigate(screensNames.verifyOtp)}
+        callBack={onSubmit}
           title={strings.NXT}
           btnStyle={{marginTop:Scale(120)}} />
           </KeyboardAwareScrollView>

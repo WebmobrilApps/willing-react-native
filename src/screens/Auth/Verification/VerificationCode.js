@@ -1,5 +1,5 @@
 import { View, Text, TextInput } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import WrapperContainer from '../../../components/WrapperContainer'
 import commonStyles from '../../../styles/commonStyles'
 import colors from '../../../styles/colors'
@@ -9,8 +9,19 @@ import styles from './styles'
 import CustomBtn from '../../../components/CustomBtn'
 import Scale, { verticalScale } from '../../../styles/Scale'
 import screensNames from '../../../constants/screensNames'
+import { resendOtp, verifyMobileOtp } from '../../../redux/actions/auth'
+import Toast from 'react-native-simple-toast'
+import { useNavigation } from '@react-navigation/native'
+import fontFamily from '../../../styles/fontFamily'
 
 const VerificationCode = (props) => {
+  const preData = props.route.params.data
+  const navigation = useNavigation()
+  const [count, setCount] = useState(30)
+  const [otp, setOtp] = useState(preData.otp)
+
+
+  console.log('pre data',preData.token);
   const [f1, setF1] = useState('');
   const [f2, setF2] = useState('');
   const [f3, setF3] = useState('');
@@ -25,12 +36,42 @@ const VerificationCode = (props) => {
   const et5 = useRef()
   const et6 = useRef()
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (count == 0) {
+        clearInterval(interval);
+      } else {
+        setCount(count - 1);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [count]);
+
+  const onSubmit = () => {
+    const otp = f1 + f2 + f3 + f4+ f5 + f6
+    if (otp == '') {
+      Toast.show('please enter otp')
+    } else {
+      verifyMobileOtp(preData.token, otp, navigation)
+    }
+  }
+
+  const onResendOtp = async () => {
+    setCount(30)
+    resendOtp(preData.token).then(res => {
+      // console.log('otp',res)
+      setOtp(res.data.otp)
+    })
+  }
+
   return (
     <WrapperContainer wrapperStyle={MainContainerstyles.container}
       gradient>
       <View style={{ justifyContent: 'center', flex: 1 }}>
         <Text style={[commonStyles.fontSizeBold27, { color: colors.white, textAlign: 'center',marginBottom:Scale(5) }]}>{strings.VERIFICATION_CODE}</Text>
-        <Text style={[commonStyles.fontSize14, { color: colors.white, textAlign: 'center' }]}>{strings.ENTER_VERIFICATION_CODE}</Text>
+        <Text style={[commonStyles.fontSize14, { color: colors.white, textAlign: 'center' }]}>{strings.ENTER_VERIFICATION_CODE}  {otp}</Text>
         <View style={styles.otpContainer}>
           <View style={styles.txtInputContainer}>
             <TextInput
@@ -110,10 +151,22 @@ const VerificationCode = (props) => {
               }}
               style={styles.txtInputStyle} />
           </View>
-          <Text style={[commonStyles.fontSize14, { alignSelf: 'flex-end',marginTop:verticalScale(5),fontWeight:'700' }]}>Resend OTP <Text style={{color:colors.theme}}>00:16</Text></Text>
+          <View style={styles.resendView}>
+            <Text
+              disabled={count > 0}
+              style={[commonStyles.fontSize12, { color: count == 0 ? colors.black : colors.grey }]}
+              onPress={() => {
+                onResendOtp();
+              }}>Resend OTP</Text>
+            {count !== 0 && (
+              <Text style={{ marginLeft: 10, fontSize: Scale(12), color: colors.black, fontFamily: fontFamily.bold }}>
+                {'00:' + count}
+              </Text>
+            )}
+          </View>
         </View>
         <CustomBtn
-        callBack={() => props.navigation.navigate(screensNames.welcomeScreen)}
+        callBack={() => onSubmit()}
           btnStyle={{
             width: '100%',
             backgroundColor: 'transparent',

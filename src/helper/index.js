@@ -32,11 +32,12 @@ export async function ApiRequest(endUrl, method, headers, body) {
       headers: requestHeaders,
       body: body
     };
-    console.log('options',options);
-    console.log('options ====>',options);
+    // console.log('options',options);
+    console.log('options ====>',endUrl, method, headers, body);
       const response = await fetch(endUrl, options)
-      // console.log('response ++++++++++',response);
+      console.log('respoooooo',response);
       if (response?.status == 200) {
+        
         const responseJson = await response.json()
         return responseJson
       }

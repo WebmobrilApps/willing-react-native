@@ -22,6 +22,7 @@ export default styles = StyleSheet.create({
         marginBottom: verticalScale(20),
         color: colors.black,
         width: '100%',
+        // backgroundColor:'red'
     }, icon: {
         marginRight: 5,
     },
@@ -64,14 +65,17 @@ export default styles = StyleSheet.create({
     }, containerStyle: {
         borderColor: colors.black,
         borderWidth:0,
+        // backgroundColor:'red',
+        bottom:40
     }, itemContainerStyle: {
-        // backgroundColor: colors.lightWhite,
+        // backgroundColor: colors.red,
+        // marginBottom:40
     }, imageStyle: {
         width: 24,
         height: 24,
     },renderItem:{
         flexDirection:'row',
-        padding:Scale(10)
+        padding:Scale(10),
     },checkContainer:{
         height:Scale(20),
         width:Scale(20),
@@ -79,5 +83,12 @@ export default styles = StyleSheet.create({
         borderColor:colors.black,
         borderWidth:1,
         marginRight:Scale(11),
-    }
+        justifyContent:'center',
+        alignItems:'center'
+    },checkIconStyle:{
+        height:Scale(12),
+        width:Scale(12),
+        resizeMode:'contain',
+        tintColor:colors.theme
+    },
 })

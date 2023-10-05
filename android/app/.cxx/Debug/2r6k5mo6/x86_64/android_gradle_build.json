@@ -1,6 +1,7 @@
 {
   "buildFiles": [
     "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt",
+    "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt",
     "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/slider/android/build/generated/source/codegen/jni/CMakeLists.txt",
     "/Users/ravi/Documents/willing-react-native/node_modules/react-native-date-picker/android/build/generated/source/codegen/jni/CMakeLists.txt",
     "/Users/ravi/Documents/willing-react-native/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt",
@@ -36,6 +37,7 @@
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/rrc_legacyviewmanagerinterop/libs/android.x86_64/librrc_legacyviewmanagerinterop.so",
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/runtimeexecutor/libs/android.x86_64/libruntimeexecutor.so",
         "/Users/ravi/Documents/willing-react-native/android/app/build/intermediates/cxx/Debug/2r6k5mo6/obj/x86_64/libreact_codegen_rnasyncstorage.so",
+        "/Users/ravi/Documents/willing-react-native/android/app/build/intermediates/cxx/Debug/2r6k5mo6/obj/x86_64/libreact_codegen_RNCGeolocation.so",
         "/Users/ravi/Documents/willing-react-native/android/app/build/intermediates/cxx/Debug/2r6k5mo6/obj/x86_64/libreact_codegen_ReactSlider.so",
         "/Users/ravi/Documents/willing-react-native/android/app/build/intermediates/cxx/Debug/2r6k5mo6/obj/x86_64/libreact_codegen_RNDatePickerSpecs.so",
         "/Users/ravi/Documents/willing-react-native/android/app/build/intermediates/cxx/Debug/2r6k5mo6/obj/x86_64/libreact_codegen_rngesturehandler_codegen.so",
@@ -55,6 +57,29 @@
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_debug/libs/android.x86_64/libreact_render_debug.so",
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_graphics/libs/android.x86_64/libreact_render_graphics.so",
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_mapbuffer/libs/android.x86_64/libreact_render_mapbuffer.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/rrc_view/libs/android.x86_64/librrc_view.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/turbomodulejsijni/libs/android.x86_64/libturbomodulejsijni.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/yoga/libs/android.x86_64/libyoga.so"
+      ]
+    },
+    "react_codegen_RNCGeolocation::@c3a2d2fea0635581bd06": {
+      "toolchain": "toolchain",
+      "abi": "x86_64",
+      "artifactName": "react_codegen_RNCGeolocation",
+      "output": "/Users/ravi/Documents/willing-react-native/android/app/build/intermediates/cxx/Debug/2r6k5mo6/obj/x86_64/libreact_codegen_RNCGeolocation.so",
+      "runtimeFiles": [
+        "/Users/ravi/.gradle/caches/transforms-3/34c2120d0d3cd8dc97826fc02c9e8fc4/transformed/jetified-fbjni-0.3.0/prefab/modules/fbjni/libs/android.x86_64/libfbjni.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/folly_runtime/libs/android.x86_64/libfolly_runtime.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/glog/libs/android.x86_64/libglog.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/jsi/libs/android.x86_64/libjsi.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_codegen_rncore/libs/android.x86_64/libreact_codegen_rncore.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_debug/libs/android.x86_64/libreact_debug.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_nativemodule_core/libs/android.x86_64/libreact_nativemodule_core.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_core/libs/android.x86_64/libreact_render_core.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_debug/libs/android.x86_64/libreact_render_debug.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_graphics/libs/android.x86_64/libreact_render_graphics.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/react_render_imagemanager/libs/android.x86_64/libreact_render_imagemanager.so",
+        "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/rrc_image/libs/android.x86_64/librrc_image.so",
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/rrc_view/libs/android.x86_64/librrc_view.so",
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/turbomodulejsijni/libs/android.x86_64/libturbomodulejsijni.so",
         "/Users/ravi/.gradle/caches/transforms-3/6fe00d6361b0f0c55549aec89a7f6742/transformed/jetified-react-android-0.72.4-debug/prefab/modules/yoga/libs/android.x86_64/libyoga.so"

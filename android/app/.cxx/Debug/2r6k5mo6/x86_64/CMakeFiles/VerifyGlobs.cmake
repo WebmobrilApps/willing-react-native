@@ -36,6 +36,30 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/x86_64/CMakeFiles/cmake.verify_globs")
 endif()
 
+# react_codegen_SRCS at /Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/RNCGeolocation-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/x86_64/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at /Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocation/*.cpp")
+set(OLD_GLOB
+  "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocation/EventEmitters.cpp"
+  "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocation/Props.cpp"
+  "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocation/RNCGeolocationJSI-generated.cpp"
+  "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocation/ShadowNodes.cpp"
+  "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocation/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/x86_64/CMakeFiles/cmake.verify_globs")
+endif()
+
 # react_codegen_SRCS at /Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/slider/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/ravi/Documents/willing-react-native/node_modules/@react-native-community/slider/android/build/generated/source/codegen/jni/*.cpp")
 set(OLD_GLOB

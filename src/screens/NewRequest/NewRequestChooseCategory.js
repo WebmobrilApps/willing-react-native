@@ -31,7 +31,7 @@ const NewRequestChooseCategory = (props) => {
             }
           >
             <View style={[commonStyles.categoryBox,]}>
-              <Image source={element.src} style={[styles.ctegoryImg, { tintColor: element.name == category ? colors.white : 'rgba(167, 167, 167, 1)' }]} />
+              <Image source={element.src} style={[commonStyles.ctegoryImg, { tintColor: element.name == category ? colors.white : 'rgba(167, 167, 167, 1)' }]} />
               <Text style={[styles.categorylabel, { color: element.name == category ? colors.white : colors.txtColor }]}>
                 {element.text}
               </Text>

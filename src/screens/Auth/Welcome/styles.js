@@ -12,10 +12,11 @@ export default styles = StyleSheet.create({
     }, container: {
         paddingHorizontal: Scale(30),
     }, btnStyle: {
-        width: '100%',
+        width: '90%',
         backgroundColor: 'transparent',
         borderColor: colors.white,
         borderWidth: 1,
-        marginTop:verticalScale(120)
+        marginTop:verticalScale(120),
+        alignSelf:'center'
     }
 })

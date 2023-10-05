@@ -53,11 +53,11 @@ export const validators = {
         var min = min || 6;
         var max = max || 15;
         if (value) {
-            if (!VALIDATE.NUMBER.test(value)) { Toast.show(`${strings.ENTER_VALID} ${name}`,); return false }
-            else if (value.length < min || value.length > max) { Toast.show(`${strings.ENTER_VALID} ${name}.`,); return false }
+            if (!VALIDATE.NUMBER.test(value)) { Toast.show(`Please enter valid ${name}`,); return false }
+            else if (value.length < min || value.length > max) { Toast.show(`Please enter valid ${name}.`,); return false }
             return true
         }
-        else { Toast.show(`${strings.PLEASE_ENTER} ${name}`,); return false }
+        else { Toast.show(`Please enter valid ${name}`,); return false }
     },
 
     checkPhoneNumberWithFixLength: (name, max, value) => {
@@ -123,7 +123,7 @@ export const validators = {
         if (value) {
             return true
         }
-        else { Toast.show(`${strings.PLEASE_ENTER} ${name}`,); return false }
+        else { Toast.show(`Please enter ${name}`,); return false }
     },
 
     checkRequireSelect: (name, value) => {
@@ -140,7 +140,7 @@ export const validators = {
             return true
         }
         else {
-            Toast.show(`${strings.PLEASE_ACCEPT} ${name}`,);
+            Toast.show(`please accept' ${name}`,);
             return false
         }
     },

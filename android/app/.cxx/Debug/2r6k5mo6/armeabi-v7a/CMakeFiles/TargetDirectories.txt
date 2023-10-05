@@ -4,6 +4,9 @@
 /Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/rnasyncstorage_autolinked_build/CMakeFiles/react_codegen_rnasyncstorage.dir
 /Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/rnasyncstorage_autolinked_build/CMakeFiles/edit_cache.dir
 /Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/rnasyncstorage_autolinked_build/CMakeFiles/rebuild_cache.dir
+/Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/RNCGeolocation_autolinked_build/CMakeFiles/react_codegen_RNCGeolocation.dir
+/Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/RNCGeolocation_autolinked_build/CMakeFiles/edit_cache.dir
+/Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/RNCGeolocation_autolinked_build/CMakeFiles/rebuild_cache.dir
 /Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/ReactSlider_autolinked_build/CMakeFiles/react_codegen_ReactSlider.dir
 /Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/ReactSlider_autolinked_build/CMakeFiles/edit_cache.dir
 /Users/ravi/Documents/willing-react-native/android/app/.cxx/Debug/2r6k5mo6/armeabi-v7a/ReactSlider_autolinked_build/CMakeFiles/rebuild_cache.dir

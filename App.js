@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from './src/redux/store'
 import { I18nManager, StatusBar } from 'react-native'
 import colors from './src/styles/colors'
+import LoadingUtil from './src/utility/LoadingUtil'
 
 const App = () => {
 
@@ -14,7 +15,8 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar barStyle={"dark-content"} translucent={true} backgroundColor={colors.theme} />
+    <StatusBar barStyle={"dark-content"} translucent={true} backgroundColor={colors.theme} />
+    <LoadingUtil />
       <RootStackNavigation />
     </Provider>
   )

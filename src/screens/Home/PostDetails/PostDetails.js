@@ -13,7 +13,7 @@ const { width } = Dimensions.get('window')
 const PostDetails = (props) => {
     const preData = props.route.params.item
     const screenName = props.route.params.screenName
-    console.log('itemmmmmmm', preData,screenName);
+    // console.log('itemmmmmmm', preData,screenName);
     const [currentIndex, setCurrentIndex] = useState(0)
     const [toggle, setToggle] = useState(false)
 

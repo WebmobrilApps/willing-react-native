@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "235269749686",
+    "project_id": "willing-f0681",
+    "storage_bucket": "willing-f0681.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235269749686:android:db03aedc34f66f4d551f17",
+        "android_client_info": {
+          "package_name": "com.willing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj0_dzOmd0BGPXQE1S0SNguZJWGlvqCsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

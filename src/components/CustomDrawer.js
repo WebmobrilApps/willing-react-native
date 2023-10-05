@@ -14,11 +14,14 @@ import imagePath from '../constants/imagePath';
 import commonStyles from '../styles/commonStyles';
 import { DrawerActions, useNavigation } from '@react-navigation/core';
 import screensNames from '../constants/screensNames';
+import { useDispatch } from 'react-redux';
+import types from '../redux/types';
 
 
 
 const CustomDrawer = props => {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
   const shareAppContent = 'A social assistance app 👉🏻 *best that you take a look* 🤩\nA practical way to spread help requests *based on location,* such that someone in the area can see the request. Use it and share it 🙂🙏🏻\n\nLink to the app here 👇🏻👇🏻\nwww.willingapp.com\n\nInvited to download ⬇️ and share ➡️ with others to increase good ✨😇';
 
 
