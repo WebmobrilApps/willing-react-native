@@ -41,19 +41,19 @@ const NewRequestDetails = (props) => {
         multiline={true}
       />
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Image</Text>
-      <TouchableOpacity style={{ marginVertical: verticalScale(10) }}>
+      <TouchableOpacity style={{ marginTop: verticalScale(10) }}>
         <Image source={imagePath.plusIcon} style={styles.plusImgStyle} />
       </TouchableOpacity>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Location-Default Current</Text>
-      <AppTextInput location appTxtInputStyle={{ width: '100%' }} />
+      <AppTextInput location appTxtInputStyle={{ width: '100%',marginBottom:verticalScale(10)}} />
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', flex: 1 }}>
         <View style={{ flex: 1 }}>
-          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Urgency Level</Text>
-          <AppTextInput />
+          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(10) }]}>Urgency Level</Text>
+          <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(10)}}/>
         </View>
         <View style={{ flex: 1, marginLeft: 15 }}>
-          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Until when to post?</Text>
-          <AppTextInput />
+          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(10) }]}>Until when to post?</Text>
+          <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(10)}}/>
         </View>
       </View>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>What radius from the location should be posted?</Text>

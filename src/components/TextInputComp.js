@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     borderColor:colors.black,
     borderWidth:1,
     paddingHorizontal:Scale(20),
-    marginBottom:Scale(20),
+    marginBottom:Scale(10),
   }
 })

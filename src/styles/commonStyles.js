@@ -58,6 +58,12 @@ export default StyleSheet.create({
     fontFamily: fontFamily.bold,
     textAlign: 'left'
   },
+  fontSizeBold24: {
+    fontSize: Scale(24),
+    color: colors.txtColor,
+    fontFamily: fontFamily.bold,
+    textAlign: 'left'
+  },
   fontSizeBold27: {
     fontSize: Scale(27),
     color: colors.txtColor,

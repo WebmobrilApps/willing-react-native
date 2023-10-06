@@ -6,14 +6,14 @@ import store from './src/redux/store'
 import { I18nManager, StatusBar } from 'react-native'
 import colors from './src/styles/colors'
 import LoadingUtil from './src/utility/LoadingUtil'
-import { ConsoleLog } from './src/utility/helperFunction'
 
 const App = () => {
 
   useEffect(() => {
-    SplashScreen.hide()
+    setTimeout(() => {
+      SplashScreen.hide()
+    },3000)
   }, [])
-  ConsoleLog('locale',I18nManager.getConstants().localeIdentifier)
 
 
   return (

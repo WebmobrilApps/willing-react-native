@@ -29,7 +29,5 @@ export default styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         marginTop:verticalScale(10),
-        marginRight:Scale(8),
-        // backgroundColor:'red'
     }
 })

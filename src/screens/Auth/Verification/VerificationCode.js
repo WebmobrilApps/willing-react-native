@@ -12,12 +12,15 @@ import { resendOtp, verifyMobileOtp } from '../../../redux/actions/auth'
 import Toast from 'react-native-simple-toast'
 import { useNavigation } from '@react-navigation/native'
 import fontFamily from '../../../styles/fontFamily'
+import PopUpMessage from '../../../components/Modal/PopUpMessage'
+
 
 const VerificationCode = (props) => {
   const preData = props.route.params.data
   const navigation = useNavigation()
   const [count, setCount] = useState(30)
   const [otp, setOtp] = useState(preData.otp)
+  const [modalVisible, setModalVisible] = useState(false)
 
 
   const [f1, setF1] = useState('');
@@ -48,7 +51,7 @@ const VerificationCode = (props) => {
   }, [count]);
 
   const onSubmit = () => {
-    const otp = f1 + f2 + f3 + f4+ f5 + f6
+    const otp = f1 + f2 + f3 + f4 + f5 + f6
     if (otp == '') {
       Toast.show('please enter otp')
     } else {
@@ -66,8 +69,12 @@ const VerificationCode = (props) => {
   return (
     <WrapperContainer wrapperStyle={MainContainerstyles.container}
       gradient>
+      <PopUpMessage
+        modalVisible={modalVisible}
+        close={() => setModalVisible(false)}
+        onPress={() => setModalVisible(false)} />
       <View style={{ justifyContent: 'center', flex: 1 }}>
-        <Text style={[commonStyles.fontSizeBold27, { color: colors.white, textAlign: 'center',marginBottom:Scale(5) }]}>{strings.VERIFICATION_CODE}</Text>
+        <Text style={[commonStyles.fontSizeBold27, { color: colors.white, textAlign: 'center', marginBottom: Scale(5) }]}>{strings.VERIFICATION_CODE}</Text>
         <Text style={[commonStyles.fontSize14, { color: colors.white, textAlign: 'center' }]}>{strings.ENTER_VERIFICATION_CODE}  {otp}</Text>
         <View style={styles.otpContainer}>
           <View style={styles.txtInputContainer}>
@@ -156,14 +163,14 @@ const VerificationCode = (props) => {
                 onResendOtp();
               }}>Resend OTP</Text>
             {count !== 0 && (
-              <Text style={{ marginLeft: 10, fontSize: Scale(12), color: colors.black, fontFamily: fontFamily.bold }}>
+              <Text style={{ marginLeft: 10, fontSize: Scale(12), color: colors.theme, fontFamily: fontFamily.bold }}>
                 {'00:' + count}
               </Text>
             )}
           </View>
         </View>
         <CustomBtn
-        callBack={() => onSubmit()}
+          callBack={() => onSubmit()}
           btnStyle={{
             width: '100%',
             backgroundColor: 'transparent',

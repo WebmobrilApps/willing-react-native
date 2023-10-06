@@ -140,7 +140,7 @@ export const validators = {
             return true
         }
         else {
-            Toast.show(`please accept' ${name}`,);
+            Toast.show(`please accept ${name}`,);
             return false
         }
     },

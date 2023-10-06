@@ -33,7 +33,7 @@ const DrawerStack = (props) => {
         },
         headerTitleStyle: {
           fontFamily: fontFamily.medium,
-          fontSize: Scale(18)
+          fontSize: 18
         },
         headerStyle: {
           backgroundColor: colors.theme,
@@ -53,7 +53,7 @@ export default DrawerStack;
 
 const styles = StyleSheet.create({
   filterIconStyle: {
-    height: Scale(18),
-    width: Scale(18),
+    height: Scale(20),
+    width: Scale(20),
   }
 })

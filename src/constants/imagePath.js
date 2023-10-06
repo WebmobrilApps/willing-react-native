@@ -40,5 +40,6 @@ export default {
     inActiveSwitch:require('../assets/images/icons/switchInActive.png'),
     activeSwitch:require('../assets/images/icons/switchActive.png'),
     check:require('../assets/images/icons/check.png'),
+    successIcon:require('../assets/images/icons/successIcon.png'),
 
 }

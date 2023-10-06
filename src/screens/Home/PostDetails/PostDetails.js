@@ -166,7 +166,7 @@ const PostDetails = (props) => {
                         onPress={() => setToggle(!toggle)}
                         activeOpacity={1}
                         style={[styles.roudContainer, { bottom: verticalScale(15) }]}>
-                        <Image source={imagePath.backIcon} style={[styles.upArrow, { transform: [{ rotate: '90deg' }] }]} />
+                        <Image source={imagePath.backIcon} style={[styles.upArrow, { transform: [{ rotate: toggle == true ? '90deg' : '270deg' }] }]} />
                     </TouchableOpacity>
                 </View>
             </ScrollView>

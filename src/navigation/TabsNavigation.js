@@ -137,7 +137,7 @@ function TabsNavigation(props) {
                     initialRouteName='Location'
                     tabBarPosition='top'
                     screenOptions={{
-                        swipeEnabled:true,
+                        swipeEnabled:false,
                         tabBarActiveTintColor: colors.tabBarActiveColor,
                         tabBarInactiveTintColor: colors.tabBarInActiveColor,
                         tabBarLabelStyle: { fontSize: Scale(12), fontFamily: fontFamily.medium },
