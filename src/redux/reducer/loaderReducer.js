@@ -7,7 +7,6 @@ const initial_state = {
 export default function (state = initial_state, action) {
     switch (action.type) {
         case types.LOADER:
-            // console.log('loader reducer',action.payload);
           return {
             ...state,
             loader: action.payload

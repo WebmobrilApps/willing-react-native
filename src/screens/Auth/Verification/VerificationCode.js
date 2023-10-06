@@ -8,7 +8,6 @@ import strings from '../../../constants/lng/LocalizedString'
 import styles from './styles'
 import CustomBtn from '../../../components/CustomBtn'
 import Scale, { verticalScale } from '../../../styles/Scale'
-import screensNames from '../../../constants/screensNames'
 import { resendOtp, verifyMobileOtp } from '../../../redux/actions/auth'
 import Toast from 'react-native-simple-toast'
 import { useNavigation } from '@react-navigation/native'
@@ -21,7 +20,6 @@ const VerificationCode = (props) => {
   const [otp, setOtp] = useState(preData.otp)
 
 
-  console.log('pre data',preData.token);
   const [f1, setF1] = useState('');
   const [f2, setF2] = useState('');
   const [f3, setF3] = useState('');
@@ -61,7 +59,6 @@ const VerificationCode = (props) => {
   const onResendOtp = async () => {
     setCount(30)
     resendOtp(preData.token).then(res => {
-      // console.log('otp',res)
       setOtp(res.data.otp)
     })
   }

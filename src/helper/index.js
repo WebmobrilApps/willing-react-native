@@ -4,7 +4,6 @@ import store from "../redux/store";
 getCommonHeaders = () => {
   let lang = store.getState().langInfo.language
   const userToken = store.getState().userInfo.loginInfo
-  console.log('user TOken',userToken);
 
   let commonHeaders = {
     'Accept': 'application/json',
@@ -32,12 +31,8 @@ export async function ApiRequest(endUrl, method, headers, body) {
       headers: requestHeaders,
       body: body
     };
-    // console.log('options',options);
-    console.log('options ====>',endUrl, method, headers, body);
       const response = await fetch(endUrl, options)
-      console.log('respoooooo',response);
       if (response?.status == 200) {
-        
         const responseJson = await response.json()
         return responseJson
       }

@@ -55,7 +55,6 @@ const AllPosts = (props) => {
             images: 0
         },
     ]
-    console.log('data===>',data)
     return (
         <View style={styles.container}>
             <PostPage data={data} 

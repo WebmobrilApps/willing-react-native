@@ -17,7 +17,6 @@ export const logInUser = async (countryName, countryCode, number, navigation) =>
         "country": countryName
     })
     const metaInfo = await api.ApiRequest(url, 'POST', {}, body)
-    console.log('metainfo', metaInfo);
     setLoaderVisibility(false)
     if (metaInfo.success == true) {
         Toast.show(metaInfo?.message)
@@ -38,7 +37,6 @@ export const verifyMobileOtp = async (token, otp, navigation) => {
     }
     const metaInfo = await api.ApiRequest(url, 'POST', header, body)
     setLoaderVisibility(false)
-    console.log('otp afasdfasdfasd',metaInfo);
     if (metaInfo?.success == true) {
         Toast.show(metaInfo?.message)
         navigation.navigate(screensNames.welcomeScreen)
@@ -55,7 +53,6 @@ export const resendOtp = async(token) => {
     }
     const metaInfo = await api.ApiRequest(url, 'GET', header)
     setLoaderVisibility(false)
-    console.log('otp afasdfasdfasd',metaInfo);
     if (metaInfo?.success == true) {
         Toast.show(metaInfo?.message)
         return metaInfo

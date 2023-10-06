@@ -15,9 +15,6 @@ const Notifications = (props) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
-
-  console.log('status', isEnabled);
-
   const data = [
     {
       id: 1,

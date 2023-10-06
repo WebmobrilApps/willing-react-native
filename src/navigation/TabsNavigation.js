@@ -101,7 +101,6 @@ function TabsNavigation(props) {
             //Will give you the location on location change
             
             setLocationStatus('You are Here');
-            console.log(position);
     
             //getting the Longitude from the location json        
             const currentLongitude =

@@ -57,7 +57,7 @@ export const validators = {
             else if (value.length < min || value.length > max) { Toast.show(`Please enter valid ${name}.`,); return false }
             return true
         }
-        else { Toast.show(`Please enter valid ${name}`,); return false }
+        else { Toast.show(`Please enter ${name}`,); return false }
     },
 
     checkPhoneNumberWithFixLength: (name, max, value) => {
@@ -157,9 +157,6 @@ export const validators = {
     },
 
     checkMatch: (name, value, name2, value2) => {
-        // console.log(value, "value1")
-        // console.log(value2, "value2")
-
         var min = min || 5;
         var max = max || 40;
         if (value == value2) {

@@ -16,13 +16,13 @@ import countries from '../../../constants/countries.json';
 import { logInUser } from '../../../redux/actions/auth'
 import { validators } from '../../../utility/validationFunctions'
 import { useNavigation } from '@react-navigation/native'
+import { ConsoleLog } from '../../../utility/helperFunction'
 
 
 
 const Login = (props) => {
   const navigation = useNavigation()
   const initCountry = countries.countries.find((item) => item.code == "+972");
-  console.log('intial country',initCountry);
 
   const [country, setCountry] = useState(initCountry.name+" (" + initCountry.code + ")");
   const [countryCode, setCountryCode] = useState(initCountry.code)
@@ -37,7 +37,7 @@ const Login = (props) => {
     );
   };
 
-  console.log('country list',country);
+  ConsoleLog('country list cosoled',country)
 
   const onSubmit =  () => {
     if (validators.checkRequire("Country", country) &&

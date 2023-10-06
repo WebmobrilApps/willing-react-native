@@ -14,7 +14,6 @@ const PostPage = (props) => {
     const navigation = useNavigation()
     const [currentIndex, setCurrentIndex] = useState(0)
     const { data, minePosts } = props
-    console.log(data, 'data')
 
     return (
         <View>
