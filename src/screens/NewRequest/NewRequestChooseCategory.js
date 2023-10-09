@@ -5,6 +5,7 @@ import styles from './styles';
 import PostInformation from '../../utility/PostInformation';
 import colors from '../../styles/colors';
 import commonStyles from '../../styles/commonStyles';
+import { verticalScale } from '../../styles/Scale';
 
 const NewRequestChooseCategory = (props) => {
 
@@ -32,7 +33,7 @@ const NewRequestChooseCategory = (props) => {
           >
             <View style={[commonStyles.categoryBox,]}>
               <Image source={element.src} style={[commonStyles.ctegoryImg, { tintColor: element.name == category ? colors.white : 'rgba(167, 167, 167, 1)' }]} />
-              <Text style={[styles.categorylabel, { color: element.name == category ? colors.white : colors.txtColor }]}>
+              <Text style={[commonStyles.fontSize10, { color: element.name == category ? colors.white : colors.txtColor,marginTop:verticalScale(10),textAlign:'center' }]}>
                 {element.text}
               </Text>
             </View>
@@ -47,9 +48,9 @@ const NewRequestChooseCategory = (props) => {
       <View style={commonStyles.newRequestChooseCategory}>{renderCategories()}</View>
       <CustomBtn
         btnStyle={{
-          width: '70%',
+          width: '60%',
           alignSelf: 'center',
-          marginTop: '40%'
+          marginTop: '60%',
         }}
         callBack={onNextBtnPress}
         title={'Next'} />

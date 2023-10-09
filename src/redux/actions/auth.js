@@ -4,6 +4,7 @@ import store from "../store";
 import * as api from '../../helper/index'
 import screensNames from "../../constants/screensNames";
 import Toast from 'react-native-simple-toast'
+import types from "../types";
 
 
 const { dispatch } = store
@@ -38,8 +39,12 @@ export const verifyMobileOtp = async (token, otp, navigation) => {
     const metaInfo = await api.ApiRequest(url, 'POST', header, body)
     setLoaderVisibility(false)
     if (metaInfo?.success == true) {
+        dispatch({
+            type:types.LOGIN,
+            payload:metaInfo?.data?.token
+          })
         Toast.show(metaInfo?.message)
-        navigation.navigate(screensNames.welcomeScreen)
+        // console.log('metaInfo+++++++',metaInfo);
     } else if (metaInfo?.success == false) {
         Toast.show(metaInfo?.message)
     }

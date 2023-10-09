@@ -8,12 +8,14 @@ import Scale from '../styles/Scale';
 import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import imagePath from '../constants/imagePath';
 import screensNames from '../constants/screensNames';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 
 
 const Drawer = createDrawerNavigator();
 
-
 const DrawerStack = (props) => {
+  const navigation = useNavigation()
+
   return (
     <Drawer.Navigator
       initialRouteName="WILLING"
@@ -23,6 +25,10 @@ const DrawerStack = (props) => {
         headerShown: true,
         headerShadowVisible: false,
         headerTintColor: colors.white,
+        headerLeft: props => <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+        style={{marginLeft: Scale(18)}}>
+          <Image source={imagePath.hamburgerMenuIcon} style={styles.filterIconStyle} />
+        </TouchableOpacity>,
         headerRight: () => {
           return (
             <TouchableOpacity onPress={() => props.navigation.navigate(screensNames.filter)}

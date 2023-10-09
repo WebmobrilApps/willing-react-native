@@ -15,6 +15,7 @@ const PostDetails = (props) => {
     const screenName = props.route.params.screenName
     const [currentIndex, setCurrentIndex] = useState(0)
     const [toggle, setToggle] = useState(false)
+    console.log('screen name   ++++',screenName);
 
 
     const CommonComp = ({ title, subtitle, img }) => {
@@ -34,7 +35,7 @@ const PostDetails = (props) => {
         img
     }) => {
         return (
-            <View style={{ alignItems: 'center',flex:1 }}>
+            <View style={{ alignItems: 'center', flex: 1 }}>
                 <View style={[styles.roudContainer, { marginBottom: verticalScale(5) }]}>
                     <TouchableOpacity>
                         <Image source={img} style={styles.socialIconStyle} />
@@ -53,7 +54,7 @@ const PostDetails = (props) => {
                         <Text style={commonStyles.fontSize12}>Status: Open</Text>
                         <Text style={commonStyles.fontSize12}>Time Posted: 2 hours ago</Text>
                     </View>
-                    {screenName == 'minPosts' ? <View style={[commonStyles.flexView, styles.container, { borderBottomColor: colors.white,paddingBottom:0}]}>
+                    {screenName == 'minPosts' ? <View style={[commonStyles.flexView, styles.container, { borderBottomColor: colors.white, paddingBottom: 0 }]}>
                         <TouchableOpacity style={commonStyles.flexView}>
                             <Image source={imagePath.edit} style={styles.iconStyle} />
                             <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>Edit</Text>
@@ -66,19 +67,57 @@ const PostDetails = (props) => {
                             <Image source={imagePath.delete} style={styles.iconStyle} />
                             <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>Delete</Text>
                         </TouchableOpacity>
-                    </View>:null}
-                    <View style={{ paddingHorizontal: Scale(20),marginTop:verticalScale(20) }}>
+                    </View> : null}
+                    <View style={{ paddingHorizontal: Scale(20), marginTop: verticalScale(20),borderBottomColor:colors.borderColor,borderBottomWidth:1,marginBottom:10 }}>
                         <View style={[commonStyles.flexView, { justifyContent: 'flex-start' }]}>
                             <Image source={preData.icon} style={styles.categoryImgStyle} />
                             <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>{preData.txt}</Text>
                         </View>
                         <Text style={[commonStyles.fontSize10, { marginVertical: verticalScale(10) }]}>{preData.description}</Text>
                     </View>
-                    <ItemSeperator
-                        seperatorStyle={{ width: '100%', marginBottom: verticalScale(20) }} />
+                        <View style={[commonStyles.flexView, { paddingHorizontal: Scale(20), }]}>
+                            <View>
+                                <CommonComp title={'Location'}
+                                    subtitle={'Israel'}
+                                    img={imagePath.mapIcon} />
+                                <CommonComp title={'Expires in'}
+                                    subtitle={'2 months'}
+                                    img={imagePath.calender} />
+                                <CommonComp title={'Mobile Number'}
+                                    subtitle={'xxxxxxxxxx'}
+                                    img={imagePath.call} />
+                            </View>
+                            <View>
+                                <CommonComp title={'Distance from you'}
+                                    subtitle={'12 km'}
+                                    img={imagePath.distance} />
+                                <CommonComp title={'Urgency Level'}
+                                    subtitle={'Moderate'}
+                                    img={imagePath.urgencyLevel} />
+                                <CommonComp title={'Posting person name'}
+                                    subtitle={'Abc'}
+                                    img={imagePath.posterIcon} />
+                            </View>
+                        </View>
+                        {!!toggle && screenName != 'minPosts' && screenName != 'otherpages' ? <ItemSeperator seperatorStyle={{ width: '100%', marginVertical: verticalScale(20) }} />:null}
+                        { !toggle &&  screenName !== 'minPosts' ? <>
+                    <Text style={[commonStyles.fontSize10, { marginHorizontal: Scale(20), textAlign: 'center', marginVertical: Scale(10),marginBottom:verticalScale(20) }]}>You can connect with the person the person that posted this request
+                        via next lorem Ipsom.
+                    </Text>
+                    <View style={[commonStyles.flexView]}>
+                        <SocialIconComp img={imagePath.whatsApp}
+                            title={'WhatsApp'} />
+                        <SocialIconComp img={imagePath.dialer}
+                            title={'Call'} />
+                        <SocialIconComp img={imagePath.message}
+                            title={'SMS'} />
+                    </View>
+                    <Text style={[commonStyles.fontSize10,{alignSelf:'center',marginVertical:verticalScale(20)}]}>Show more info</Text>
+                </> : null}
+                        {!! toggle ? <>
                     {!preData.images == 0 ?
                         <View
-                        style={{ width: width }}>
+                            style={{ width: width }}>
                             <FlatList
                                 data={preData.images}
                                 horizontal={true}
@@ -107,7 +146,7 @@ const PostDetails = (props) => {
                                 {preData?.images.map((item, index) => {
                                     return (
                                         <View
-                                        key={index}
+                                            key={index}
                                             style={{
                                                 alignSelf: 'center',
                                                 width: Scale(8),
@@ -122,11 +161,21 @@ const PostDetails = (props) => {
                                 })}
                             </View>
                         </View> : null}
-
-                    <Text style={[commonStyles.fontSize10, { marginHorizontal: Scale(20), textAlign: 'center', marginVertical: Scale(10) }]}>You can connect with the person the person that posted this request
+                        </>:null}
+                    {screenName !== 'minPosts' ? <>
+                        <ItemSeperator seperatorStyle={{ width: '100%', marginTop: verticalScale(20) }} />
+                        <TouchableOpacity
+                            onPress={() => setToggle(!toggle)}
+                            activeOpacity={1}
+                            style={[styles.roudContainer, { bottom: verticalScale(15) }]}>
+                            <Image source={imagePath.backIcon} style={[styles.upArrow, { transform: [{ rotate: toggle == true ? '90deg' : '270deg' }] }]} />
+                        </TouchableOpacity>
+                    </> : null}
+                    { !!toggle &&  screenName !== 'minPosts' ? <>
+                    <Text style={[commonStyles.fontSize10, { marginHorizontal: Scale(20), textAlign: 'center', marginVertical: Scale(10),marginBottom:verticalScale(20) }]}>You can connect with the person the person that posted this request
                         via next lorem Ipsom.
                     </Text>
-                    <View style={[commonStyles.flexView ]}>
+                    <View style={[commonStyles.flexView]}>
                         <SocialIconComp img={imagePath.whatsApp}
                             title={'WhatsApp'} />
                         <SocialIconComp img={imagePath.dialer}
@@ -134,40 +183,7 @@ const PostDetails = (props) => {
                         <SocialIconComp img={imagePath.message}
                             title={'SMS'} />
                     </View>
-                    {!!toggle ? <>
-                        <ItemSeperator seperatorStyle={{ width: '100%', marginVertical: verticalScale(10) }} />
-                        <View style={[commonStyles.flexView, { paddingHorizontal: Scale(20), }]}>
-                            <View>
-                                <CommonComp title={'Location'}
-                                    subtitle={'Israel'}
-                                    img={imagePath.mapIcon} />
-                                <CommonComp title={'Expires in'}
-                                    subtitle={'2 months'}
-                                    img={imagePath.calender} />
-                                <CommonComp title={'Mobile Number'}
-                                    subtitle={'xxxxxxxxxx'}
-                                    img={imagePath.call} />
-                            </View>
-                            <View>
-                                <CommonComp title={'Distance from you'}
-                                    subtitle={'12 km'}
-                                    img={imagePath.distance} />
-                                <CommonComp title={'Urgency Level'}
-                                    subtitle={'Moderate'}
-                                    img={imagePath.urgencyLevel} />
-                                <CommonComp title={'Posting person name'}
-                                    subtitle={'Abc'}
-                                    img={imagePath.posterIcon} />
-                            </View>
-                        </View>
-                    </>:null}
-                    <ItemSeperator seperatorStyle={{ width: '100%', marginTop: verticalScale(20) }} />
-                    <TouchableOpacity
-                        onPress={() => setToggle(!toggle)}
-                        activeOpacity={1}
-                        style={[styles.roudContainer, { bottom: verticalScale(15) }]}>
-                        <Image source={imagePath.backIcon} style={[styles.upArrow, { transform: [{ rotate: toggle == true ? '90deg' : '270deg' }] }]} />
-                    </TouchableOpacity>
+                </> : null}
                 </View>
             </ScrollView>
         </SafeAreaView>

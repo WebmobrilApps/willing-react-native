@@ -81,6 +81,12 @@ export default StyleSheet.create({
     fontFamily: fontFamily.bold,
     textAlign: 'left'
   },
+  fontSizeBold30: {
+    fontSize: Scale(30),
+    color: colors.white,
+    fontFamily: fontFamily.bold,
+    textAlign: 'left'
+  },
   flexView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -113,9 +119,9 @@ export default StyleSheet.create({
     width: Scale(34),
     resizeMode: 'contain'
   }, categoryButton: {
-    width: Scale(97),
+    width: Scale(90),
     height: 100,
-    margin: 7,
+    margin: 10,
     borderRadius: 5,
     shadowColor: "#000",
     shadowOffset: {
@@ -141,7 +147,8 @@ export default StyleSheet.create({
     width: "100%",
     height: "100%",
     alignItems: "center",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding:Scale(10)
   }, newRequestChooseCategory: {
     flexDirection: "row",
     flexWrap: "wrap",

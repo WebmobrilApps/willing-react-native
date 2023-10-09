@@ -76,7 +76,6 @@ const Login = (props) => {
           data={countries.countries}
           selectedTextProps={{
             numberOfLines: 1,
-
           }}
           // maxHeight={300}
           renderItem={renderItem}

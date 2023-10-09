@@ -175,7 +175,8 @@ const VerificationCode = (props) => {
             width: '100%',
             backgroundColor: 'transparent',
             borderColor: colors.white,
-            borderWidth: 1
+            borderWidth: 1,
+            marginTop:verticalScale(50)
           }}
           title={strings.NXT} />
       </View>

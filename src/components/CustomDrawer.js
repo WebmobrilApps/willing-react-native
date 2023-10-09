@@ -72,30 +72,29 @@ const CustomDrawer = props => {
       image: imagePath.notify,
       onPress: () => onTopicPress(screensNames.notification),
     },
-
     {
       id: 3,
+      title: "Rate Us",
+      image: imagePath.star,
+      onPress: () => onRateUsPress(),
+    },
+    {
+      id: 4,
       title: 'Share',
       image: imagePath.share,
       onPress: () => onShare(shareAppContent),
     },
     {
-      id: 4,
+      id: 5,
       title: "Support/Feedback",
       image: imagePath.support,
       onPress: () => onTopicPress(screensNames.helpCenter),
     },
     {
-      id: 5,
+      id: 6,
       title: "QnA",
       image: imagePath.qna,
       onPress: () => onTopicPress(screensNames.qna),
-    },
-    {
-      id: 6,
-      title: "Rate Us",
-      image: imagePath.star,
-      onPress: () => onRateUsPress(),
     },
     {
       id: 7,
@@ -156,9 +155,10 @@ const styles = StyleSheet.create({
     paddingLeft:Scale(20),
     borderBottomColor:colors.borderColor,
     borderBottomWidth:1,
+    paddingVertical:Scale(11)
   },imgStyle:{
-    height:Scale(22),
-    width:Scale(22),
+    height:Scale(16),
+    width:Scale(16),
     marginRight:Scale(20),
     resizeMode:'contain'
   }

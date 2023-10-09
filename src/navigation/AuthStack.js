@@ -38,7 +38,6 @@ const AuthStackNavigator = (props) => {
       }}>
       <AuthStack.Screen name={screensNames.login} component={Login} />
       <AuthStack.Screen name={screensNames.verifyOtp} component={VerificationCode} />
-      <AuthStack.Screen name={screensNames.welcomeScreen} component={Welcome} />
     </AuthStack.Navigator>
   );
 }

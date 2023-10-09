@@ -18,7 +18,9 @@ export default BackIconComp
 
 const styles = StyleSheet.create({
   container: {
-
+    // backgroundColor:'red',
+    padding: 10,
+    paddingLeft: 0
   }, imgStyle: {
     height: Scale(18),
     width: Scale(11),

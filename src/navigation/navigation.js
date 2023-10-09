@@ -7,8 +7,7 @@ import colors from '../styles/colors';
 
 
 const RootStackNavigation = props => {
-  const token = 
-  useSelector((state) => state.userInfo.loginInfo)
+  const token = useSelector((state) => state.userInfo.loginInfo)
 
   const MyTheme = {
     dark: false,

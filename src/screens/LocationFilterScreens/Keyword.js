@@ -27,8 +27,9 @@ const Keyword = () => {
                 <Text style={commonStyles.fontSize10}>x</Text>
             </TouchableOpacity>
         </View>
-        <View style={{flex:1,justifyContent:'flex-end',paddingBottom:verticalScale(40)}}>
-            <CustomBtn title={'ADD TO LIST'}/>
+        <View style={{flex:1,justifyContent:'flex-end',paddingBottom:verticalScale(60)}}>
+            <CustomBtn title={'ADD TO LIST'}
+            btnStyle={{width:'80%',alignSelf:'center'}}/>
         </View>
         </View>
        
@@ -40,10 +41,10 @@ export default Keyword
 
 const styles = StyleSheet.create({
     bubbleStyle:{
-        // height:verticalScale(20),
+        height:verticalScale(20),
         borderColor:colors.black,
         borderWidth:1,
-        padding:Scale(5),
+        // padding:Scale(5),
         flexDirection:'row',
         paddingHorizontal:Scale(8),
         marginRight:Scale(12)

@@ -10,7 +10,7 @@ export default styles = StyleSheet.create({
         marginTop: verticalScale(150),
         marginBottom: verticalScale(50)
     }, container: {
-        paddingHorizontal: Scale(30),
+        paddingHorizontal: Scale(35),
     }, btnStyle: {
         width: '90%',
         backgroundColor: 'transparent',

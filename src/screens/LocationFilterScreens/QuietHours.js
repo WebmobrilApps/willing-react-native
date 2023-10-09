@@ -7,6 +7,7 @@ import fontFamily from '../../styles/fontFamily'
 import imagePath from '../../constants/imagePath'
 import ItemSeperator from '../../components/ItemSeperator'
 import DatePicker from 'react-native-date-picker'
+import colors from '../../styles/colors'
 
 
 const QuietHours = () => {
@@ -35,15 +36,17 @@ const QuietHours = () => {
           locale={'fr'}
           dividerHeight={0}
           style={{ height: 120 }}
+          textColor={colors.black}
         />
       </View>
       <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20) }]}>To</Text>
+        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20) }]}>Till</Text>
         <DatePicker mode='time' date={date} onDateChange={setDate}
           is24hourSource={'device'}
           locale={'fr'}
           dividerHeight={0}
           style={{ height: 110 }}
+          textColor={colors.black}
         />
       </View>
     </SafeAreaView>

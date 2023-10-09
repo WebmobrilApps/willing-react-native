@@ -39,7 +39,7 @@ const NewRequestContact = () => {
 
         </TouchableOpacity>
         <CustomBtn title={'Next'}
-        btnStyle={{marginTop:verticalScale(100)}}/>
+        btnStyle={{marginTop:'85%',width:'70%',alignSelf:'center'}}/>
     </View>
   )
 }

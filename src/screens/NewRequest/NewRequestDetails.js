@@ -28,11 +28,11 @@ const NewRequestDetails = (props) => {
 
   const params = {
     sliderWhere: {
-      postDetailsRadius:postDetailsRadius,
+      postDetailsRadius: postDetailsRadius,
       setPostDetailsRadius: setPostDetailsRadius
     },
   }
-  
+
   return (
     <View style={styles.container}>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Please fill the below details:</Text>
@@ -45,22 +45,22 @@ const NewRequestDetails = (props) => {
         <Image source={imagePath.plusIcon} style={styles.plusImgStyle} />
       </TouchableOpacity>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Location-Default Current</Text>
-      <AppTextInput location appTxtInputStyle={{ width: '100%',marginBottom:verticalScale(10)}} />
+      <AppTextInput location appTxtInputStyle={{ width: '100%', marginBottom: verticalScale(10) }} />
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', flex: 1 }}>
         <View style={{ flex: 1 }}>
           <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(10) }]}>Urgency Level</Text>
-          <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(10)}}/>
+          <AppTextInput appTxtInputStyle={{ marginBottom: verticalScale(10) }} />
         </View>
         <View style={{ flex: 1, marginLeft: 15 }}>
           <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(10) }]}>Until when to post?</Text>
-          <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(10)}}/>
+          <AppTextInput appTxtInputStyle={{ marginBottom: verticalScale(10) }} />
         </View>
       </View>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>What radius from the location should be posted?</Text>
       <SliderCompWhen {...params.sliderWhere} />
 
       <CustomBtn title={'Next'}
-      btnStyle={{marginBottom:verticalScale(20)}}
+        btnStyle={{ marginTop: '20%', width: '70%', alignSelf: 'center' }}
         callBack={onNextBtnPress} />
     </View>
   )

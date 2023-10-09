@@ -21,14 +21,14 @@ const Filter = () => {
         style={{ flex: 1, width: '100%', height: '100%' }}
         showsVerticalScrollIndicator={false}>
             <View style={[styles.container, { padding: Scale(20) }]}>
-                <View style={[commonStyles.flexView, { marginBottom: verticalScale(8) }]}>
+                <View style={[commonStyles.flexView, { marginVertical: verticalScale(15) }]}>
                     <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Filter by keyword</Text>
                     <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, color: 'rgba(138, 138, 138, 1)' }]}>Clear All</Text>
                 </View>
-                <AppTextInput />
-                <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(8) }]}>Filter by City</Text>
-                <AppTextInput />
-                <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(8) }]}>Filter by Category</Text>
+                <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(15)}}/>
+                <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(15) }]}>Filter by City</Text>
+                <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(15)}}/>
+                <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(15) }]}>Filter by Category</Text>
                 <FlatList
                     numColumns={3}
                     data={PostInformation.categoryType}
@@ -40,7 +40,7 @@ const Filter = () => {
                             </TouchableOpacity>
                         )
                     }} />
-                    <CustomBtn btnStyle={{width:'80%',alignSelf:'center',marginTop:verticalScale(150)}}
+                    <CustomBtn btnStyle={{width:'80%',alignSelf:'center',marginTop:'80%'}}
                     title={'Next'}/>
             </View>
             </KeyboardAwareScrollView>

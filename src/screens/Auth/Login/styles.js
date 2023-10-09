@@ -10,7 +10,7 @@ export default styles = StyleSheet.create({
     },logoStyle:{
         height:Scale(140),
         width:Scale(140),
-        marginBottom:Scale(100),
+        marginBottom:Scale(120),
         marginTop:verticalScale(80),
         alignSelf:'center'
     },dropdown: {
