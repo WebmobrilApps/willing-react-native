@@ -56,7 +56,7 @@ const Welcome = (props) => {
       <Text style={[commonStyles.fontSize16, { color: colors.white, textAlign: 'center' }]}>{strings.CONGRATS_YOU_VERIFIED}</Text>
       <CustomBtn 
       callBack={() => onSubmit()}
-      title={'Proceed'} 
+      title={'PROCEED'} 
       btnStyle={styles.btnStyle}/>
       </View>
     </WrapperContainer>

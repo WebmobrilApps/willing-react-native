@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 import colors from '../../styles/colors'
 import Scale, { verticalScale } from '../../styles/Scale'
@@ -8,6 +8,8 @@ import AppTextInput from '../../components/AppTextInput'
 import PostInformation from '../../utility/PostInformation'
 import CustomBtn from '../../components/CustomBtn'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import strings from '../../constants/lng/LocalizedString'
+const {height} = Dimensions.get('window')
 
 const Filter = () => {
     const [category, setCategory] = useState('')
@@ -20,7 +22,7 @@ const Filter = () => {
         // contentContainerStyle={[{flex:1}]}
         style={{ flex: 1, width: '100%', height: '100%' }}
         showsVerticalScrollIndicator={false}>
-            <View style={[styles.container, { padding: Scale(20) }]}>
+            <View style={[styles.container, { padding: Scale(20),height:height/1.12 }]}>
                 <View style={[commonStyles.flexView, { marginVertical: verticalScale(15) }]}>
                     <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Filter by keyword</Text>
                     <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, color: 'rgba(138, 138, 138, 1)' }]}>Clear All</Text>
@@ -40,8 +42,8 @@ const Filter = () => {
                             </TouchableOpacity>
                         )
                     }} />
-                    <CustomBtn btnStyle={{width:'80%',alignSelf:'center',marginTop:'80%'}}
-                    title={'Next'}/>
+                    <CustomBtn btnStyle={{width:'80%',alignSelf:'center',position:'absolute',bottom:verticalScale(40)}}
+                    title={strings.NXT}/>
             </View>
             </KeyboardAwareScrollView>
         </SafeAreaView>

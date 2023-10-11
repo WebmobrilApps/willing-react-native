@@ -13,29 +13,18 @@ import Toast from 'react-native-simple-toast'
 import { useNavigation } from '@react-navigation/native'
 import fontFamily from '../../../styles/fontFamily'
 import PopUpMessage from '../../../components/Modal/PopUpMessage'
+import OtpInputs from 'react-native-otp-inputs'
+import { ConsoleLog } from '../../../utility/helperFunction'
 
 
 const VerificationCode = (props) => {
   const preData = props.route.params.data
   const navigation = useNavigation()
   const [count, setCount] = useState(30)
-  const [otp, setOtp] = useState(preData.otp)
+  const [preOtp, setPreOtp] = useState(preData.otp)
+  const [otp, setOtp] = useState('')
   const [modalVisible, setModalVisible] = useState(false)
 
-
-  const [f1, setF1] = useState('');
-  const [f2, setF2] = useState('');
-  const [f3, setF3] = useState('');
-  const [f4, setF4] = useState('');
-  const [f5, setF5] = useState('');
-  const [f6, setF6] = useState('');
-
-  const et1 = useRef()
-  const et2 = useRef()
-  const et3 = useRef()
-  const et4 = useRef()
-  const et5 = useRef()
-  const et6 = useRef()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,9 +40,9 @@ const VerificationCode = (props) => {
   }, [count]);
 
   const onSubmit = () => {
-    const otp = f1 + f2 + f3 + f4 + f5 + f6
-    if (otp == '') {
-      Toast.show('please enter otp')
+    // return ConsoleLog('tet',otp.length);
+    if (otp.length != 6) {
+      Toast.show('please enter 6 digit otp')
     } else {
       verifyMobileOtp(preData.token, otp, navigation)
     }
@@ -62,7 +51,7 @@ const VerificationCode = (props) => {
   const onResendOtp = async () => {
     setCount(30)
     resendOtp(preData.token).then(res => {
-      setOtp(res.data.otp)
+      setPreOtp(res.data.otp)
     })
   }
 
@@ -75,85 +64,25 @@ const VerificationCode = (props) => {
         onPress={() => setModalVisible(false)} />
       <View style={{ justifyContent: 'center', flex: 1 }}>
         <Text style={[commonStyles.fontSizeBold27, { color: colors.white, textAlign: 'center', marginBottom: Scale(5) }]}>{strings.VERIFICATION_CODE}</Text>
-        <Text style={[commonStyles.fontSize14, { color: colors.white, textAlign: 'center' }]}>{strings.ENTER_VERIFICATION_CODE}  {otp}</Text>
+        <Text style={[commonStyles.fontSize14, { color: colors.white, textAlign: 'center' }]}>{strings.ENTER_VERIFICATION_CODE}  {preOtp}</Text>
         <View style={styles.otpContainer}>
           <View style={styles.txtInputContainer}>
-            <TextInput
-              maxLength={1}
-              ref={et1}
-              keyboardType='number-pad'
-              onChangeText={txt => {
-                setF1(txt)
-                if (txt.length >= 1) {
-                  et2.current.focus()
-                }
+            <OtpInputs
+              clearTextOnFocus
+              handleChange={e => setOtp(e)}
+              keyboardType="phone-pad"
+              numberOfInputs={6}
+
+              style={{
+                // width: ,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignSelf: 'center'
               }}
-              style={styles.txtInputStyle} />
-            <TextInput
-              maxLength={1}
-              ref={et2}
-              keyboardType='number-pad'
-              onChangeText={txt => {
-                setF2(txt)
-                if (txt.length >= 1) {
-                  et3.current.focus()
-                } else if (txt.length < 1) {
-                  et1.current.focus()
-                }
-              }}
-              style={styles.txtInputStyle} />
-            <TextInput
-              maxLength={1}
-              ref={et3}
-              keyboardType='number-pad'
-              onChangeText={txt => {
-                setF3(txt)
-                if (txt.length >= 1) {
-                  et4.current.focus()
-                } else if (txt.length < 1) {
-                  et2.current.focus()
-                }
-              }}
-              style={styles.txtInputStyle} />
-            <TextInput
-              maxLength={1}
-              ref={et4}
-              keyboardType='number-pad'
-              onChangeText={txt => {
-                setF4(txt)
-                if (txt.length >= 1) {
-                  et5.current.focus()
-                } else if (txt.length < 1) {
-                  et3.current.focus()
-                }
-              }}
-              style={styles.txtInputStyle} />
-            <TextInput
-              maxLength={1}
-              ref={et5}
-              keyboardType='number-pad'
-              onChangeText={txt => {
-                setF5(txt)
-                if (txt.length >= 1) {
-                  et6.current.focus()
-                } else if (txt.length < 1) {
-                  et4.current.focus()
-                }
-              }}
-              style={styles.txtInputStyle} />
-            <TextInput
-              maxLength={1}
-              ref={et6}
-              keyboardType='number-pad'
-              onChangeText={txt => {
-                setF6(txt)
-                if (txt.length >= 1) {
-                  et6.current.focus()
-                } else if (txt.length < 1) {
-                  et5.current.focus()
-                }
-              }}
-              style={styles.txtInputStyle} />
+              inputStyles={styles.otpInput}
+              //   ref={otpRef}
+              selectTextOnFocus={false}
+            />
           </View>
           <View style={styles.resendView}>
             <Text
@@ -176,7 +105,7 @@ const VerificationCode = (props) => {
             backgroundColor: 'transparent',
             borderColor: colors.white,
             borderWidth: 1,
-            marginTop:verticalScale(50)
+            marginTop: verticalScale(50)
           }}
           title={strings.NXT} />
       </View>

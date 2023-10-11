@@ -41,12 +41,14 @@ export default Keyword
 
 const styles = StyleSheet.create({
     bubbleStyle:{
-        height:verticalScale(20),
+        height:verticalScale(22),
         borderColor:colors.black,
         borderWidth:1,
-        // padding:Scale(5),
         flexDirection:'row',
-        paddingHorizontal:Scale(8),
-        marginRight:Scale(12)
+        marginRight:Scale(12),
+        alignItems:'center',
+        paddingLeft:Scale(15),
+        paddingRight:Scale(5),
+        justifyContent:'flex-end'
     }
 })

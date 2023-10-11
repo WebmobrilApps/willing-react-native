@@ -46,6 +46,8 @@ const PostDetails = (props) => {
         )
     }
 
+    console.log('toggle++++',toggle);
+
     return (
         <SafeAreaView style={commonStyles.mainContainer}>
             <ScrollView>
@@ -104,7 +106,7 @@ const PostDetails = (props) => {
                     <Text style={[commonStyles.fontSize10, { marginHorizontal: Scale(20), textAlign: 'center', marginVertical: Scale(10),marginBottom:verticalScale(20) }]}>You can connect with the person the person that posted this request
                         via next lorem Ipsom.
                     </Text>
-                    <View style={[commonStyles.flexView]}>
+                    <View style={[commonStyles.flexView,{marginVertical:verticalScale(15)}]}>
                         <SocialIconComp img={imagePath.whatsApp}
                             title={'WhatsApp'} />
                         <SocialIconComp img={imagePath.dialer}
@@ -118,6 +120,8 @@ const PostDetails = (props) => {
                     {!preData.images == 0 ?
                         <View
                             style={{ width: width }}>
+                            <ItemSeperator seperatorStyle={{ width: '100%', marginBottom: verticalScale(20) }} />
+
                             <FlatList
                                 data={preData.images}
                                 horizontal={true}
@@ -170,6 +174,7 @@ const PostDetails = (props) => {
                             style={[styles.roudContainer, { bottom: verticalScale(15) }]}>
                             <Image source={imagePath.backIcon} style={[styles.upArrow, { transform: [{ rotate: toggle == true ? '90deg' : '270deg' }] }]} />
                         </TouchableOpacity>
+                        {!toggle ? <Text style={[commonStyles.fontSize10,{alignSelf:'center'}]}>Report the post</Text>:null}
                     </> : null}
                     { !!toggle &&  screenName !== 'minPosts' ? <>
                     <Text style={[commonStyles.fontSize10, { marginHorizontal: Scale(20), textAlign: 'center', marginVertical: Scale(10),marginBottom:verticalScale(20) }]}>You can connect with the person the person that posted this request

@@ -1,8 +1,8 @@
-import { View, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import commonStyles from '../../styles/commonStyles'
 import { useNavigation } from '@react-navigation/native'
-import Scale from '../../styles/Scale'
+import Scale, { verticalScale } from '../../styles/Scale'
 import fontFamily from '../../styles/fontFamily'
 import imagePath from '../../constants/imagePath'
 import ItemSeperator from '../../components/ItemSeperator'
@@ -31,26 +31,41 @@ const QuietHours = () => {
 
       <View style={{ justifyContent: 'center', alignItems: 'center', }}>
         <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20) }]}>From</Text>
-        <DatePicker mode='time' date={date} onDateChange={setDate}
-          is24hourSource={'device'}
-          locale={'fr'}
-          dividerHeight={0}
-          style={{ height: 120 }}
-          textColor={colors.black}
-        />
+        <View style={styles.timeContainer}>
+          <DatePicker mode='time' date={date} onDateChange={setDate}
+            is24hourSource={'device'}
+            locale={'fr'}
+            dividerHeight={0}
+            style={{ height: 120 }}
+            textColor={colors.black}
+          />
+        </View>
+
       </View>
       <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20) }]}>Till</Text>
-        <DatePicker mode='time' date={date} onDateChange={setDate}
-          is24hourSource={'device'}
-          locale={'fr'}
-          dividerHeight={0}
-          style={{ height: 110 }}
-          textColor={colors.black}
-        />
+        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20), marginTop: verticalScale(30) }]}>Till</Text>
+        <View style={styles.timeContainer}>
+          <DatePicker mode='time' date={date} onDateChange={setDate}
+            is24hourSource={'device'}
+            locale={'fr'}
+            dividerHeight={0}
+            style={{ height: 110 }}
+            textColor={colors.black}
+          />
+        </View>
       </View>
     </SafeAreaView>
   )
 }
 
 export default QuietHours
+
+const styles = StyleSheet.create({
+  timeContainer: {
+    borderColor: colors.borderColor
+    , borderWidth: 1,
+    borderRadius: 7,
+    paddingVertical: verticalScale(10),
+    paddingHorizontal: Scale(30)
+  }
+})

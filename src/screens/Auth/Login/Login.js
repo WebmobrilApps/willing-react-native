@@ -66,6 +66,9 @@ const Login = (props) => {
         <Image source={imagePath.logo} style={styles.logoStyle} />
         <Dropdown
           style={[styles.dropdown]}
+          renderRightIcon={() => (
+            <Image source={imagePath.dropDownIcon} style={{ height: 12, width: 12, resizeMode: 'contain' }} />
+          )}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}

@@ -42,5 +42,6 @@ export default {
     check:require('../assets/images/icons/check.png'),
     successIcon:require('../assets/images/icons/successIcon.png'),
     hamburgerMenuIcon:require('../assets/images/icons/hamburger_menu_icon.png'),
+    dropDownIcon:require('../assets/images/icons/dropDownIcon.png'),
 
 }

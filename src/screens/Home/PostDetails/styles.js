@@ -11,7 +11,8 @@ export default styles = StyleSheet.create({
         height:Scale(16),
         width:Scale(16),
         resizeMode:'contain',
-        marginRight:Scale(10)
+        marginRight:Scale(10),
+        tintColor:colors.txtColor
     },categoryImgStyle:{
         height:Scale(22),
         width:Scale(22),

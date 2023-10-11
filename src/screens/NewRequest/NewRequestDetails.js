@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, ScrollView, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 import CustomBtn from '../../components/CustomBtn';
 import commonStyles from '../../styles/commonStyles';
@@ -9,9 +9,10 @@ import TextInputComp from '../../components/TextInputComp';
 import colors from '../../styles/colors';
 import imagePath from '../../constants/imagePath';
 import SliderCompWhen from '../../components/SliderCompWhen';
+const {height} = Dimensions.get('window')
 
 const NewRequestDetails = (props) => {
-
+console.log(props)
   const {
     setActivePage,
   } = props;
@@ -35,6 +36,8 @@ const NewRequestDetails = (props) => {
 
   return (
     <View style={styles.container}>
+    <ScrollView style={{height:height/1.42}}
+    showsVerticalScrollIndicator={false}>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Please fill the below details:</Text>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Description</Text>
       <TextInputComp
@@ -46,7 +49,7 @@ const NewRequestDetails = (props) => {
       </TouchableOpacity>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Location-Default Current</Text>
       <AppTextInput location appTxtInputStyle={{ width: '100%', marginBottom: verticalScale(10) }} />
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', flex: 1 }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', }}>
         <View style={{ flex: 1 }}>
           <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginBottom: verticalScale(10) }]}>Urgency Level</Text>
           <AppTextInput appTxtInputStyle={{ marginBottom: verticalScale(10) }} />
@@ -56,13 +59,20 @@ const NewRequestDetails = (props) => {
           <AppTextInput appTxtInputStyle={{ marginBottom: verticalScale(10) }} />
         </View>
       </View>
+
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>What radius from the location should be posted?</Text>
       <SliderCompWhen {...params.sliderWhere} />
 
-      <CustomBtn title={'Next'}
-        btnStyle={{ marginTop: '20%', width: '70%', alignSelf: 'center' }}
-        callBack={onNextBtnPress} />
+      </ScrollView>
+        <CustomBtn title={'NEXT'}
+        btnStyle={{ width: '70%', alignSelf: 'center', }}
+        callBack={() => props.onClick(2)}
+       />
+    
+      
+
     </View>
+
   )
 }
 
@@ -70,7 +80,7 @@ export default NewRequestDetails
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     paddingHorizontal: Scale(20)
   }, plusImgStyle: {
     height: Scale(38),

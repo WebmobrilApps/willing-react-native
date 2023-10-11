@@ -44,16 +44,12 @@ const NewRequestChooseCategory = (props) => {
   };
 
   return (
-    <View>
-      <View style={commonStyles.newRequestChooseCategory}>{renderCategories()}</View>
-      <CustomBtn
-        btnStyle={{
-          width: '60%',
-          alignSelf: 'center',
-          marginTop: '60%',
-        }}
-        callBack={onNextBtnPress}
-        title={'Next'} />
+    <View style={[commonStyles.mainContainer,]}>
+      <View style={[commonStyles.newRequestChooseCategory]}>{renderCategories()}</View>  
+       <CustomBtn title={'NEXT'}
+      btnStyle={{ width: '60%', alignSelf: 'center',position:'absolute',bottom:0 }}
+      callBack={()=>props.onClick(1)}
+     />
     </View>
   )
 }

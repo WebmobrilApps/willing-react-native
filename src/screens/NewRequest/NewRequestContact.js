@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 import Scale, { verticalScale } from '../../styles/Scale'
 import commonStyles from '../../styles/commonStyles'
@@ -6,6 +6,7 @@ import fontFamily from '../../styles/fontFamily'
 import colors from '../../styles/colors'
 import AppTextInput from '../../components/AppTextInput'
 import CustomBtn from '../../components/CustomBtn'
+const {height} = Dimensions.get('window')
 
 const NewRequestContact = () => {
   const [value, setvalue] = useState('myself')
@@ -15,7 +16,7 @@ const NewRequestContact = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,{height:height/1.2}]}>
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Please fill the below details:</Text>
       <TouchableOpacity onPress={() => onPressRadioBtn('myself')}
         style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
@@ -37,9 +38,12 @@ const NewRequestContact = () => {
         </View>
         <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Request on behalf of someone else</Text>
 
-        </TouchableOpacity>
-        <CustomBtn title={'Next'}
-        btnStyle={{marginTop:'85%',width:'70%',alignSelf:'center'}}/>
+      </TouchableOpacity>
+
+      <CustomBtn title={'NEXT'}
+        btnStyle={{ width: '70%', alignSelf: 'center',position:'absolute',bottom:verticalScale(70) }}
+
+      />
     </View>
   )
 }
@@ -48,7 +52,7 @@ export default NewRequestContact
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    // flex: 1,
     paddingHorizontal: Scale(20),
   }
 })
