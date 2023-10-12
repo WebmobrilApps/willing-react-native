@@ -18,7 +18,7 @@ const AppTextInput = ({
   location
 }) => {
   return (
-    <View style={[styles.inputContainerStyle,appTxtInputStyle]}>
+    <View style={[styles.inputContainerStyle, appTxtInputStyle]}>
       <TextInput style={styles.txtInputStyle}
         placeholderTextColor={colors.black}
         secureTextEntry={secureTextEntry}
@@ -32,9 +32,7 @@ const AppTextInput = ({
         editable={editable}
         multiline={multiline}
       />
-      <TouchableOpacity>
-        {!!location ? <Image source={imagePath.location} style={styles.IconStyle} />:null}
-      </TouchableOpacity>
+      {!!location ? <Image source={imagePath.location} style={styles.IconStyle} /> : null}
     </View>
   )
 }
@@ -55,14 +53,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingRight: 30
   }, txtInputStyle: {
-    width:'100%',
+    width: '100%',
     color: colors.black,
     fontFamily: fontFamily.regular,
     textAlignVertical: 'center',
     fontSize: Scale(12),
   }, IconStyle: {
-    height: Scale(21),
-    width: Scale(21),
-    marginRight: 20
+    height: Scale(18),
+    width: Scale(18),
+    marginRight: 20,
+    resizeMode: 'contain'
   }
 })

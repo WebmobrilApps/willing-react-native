@@ -22,7 +22,7 @@ const PostDetails = (props) => {
         return (
             <View style={{ marginBottom: Scale(10) }}>
                 <View style={{ flexDirection: 'row' }}>
-                    <Image source={img} style={styles.iconStyle} />
+                    <Image source={img} style={[styles.iconStyle,{tintColor:colors.txtColor}]} />
                     <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>{title}</Text>
                 </View>
                 <Text style={[commonStyles.fontSize10, { marginLeft: Scale(25) }]}>{subtitle}</Text>

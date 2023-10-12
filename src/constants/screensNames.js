@@ -16,4 +16,5 @@ location:'Location',
 category:'Category',
 keywords:'Keywords',
 quiteHours:'Quite hours',
+contactList:'Contact List'
 }

@@ -3,7 +3,7 @@ import AllPosts from '../screens/Home/Posts/AllPosts';
 import MinePosts from '../screens/Home/Posts/MinePosts';
 import RecentPosts from '../screens/Home/Posts/RecentPosts';
 import colors from '../styles/colors';
-import Scale from '../styles/Scale';
+import Scale, { verticalScale } from '../styles/Scale';
 import fontFamily from '../styles/fontFamily';
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, PermissionsAndroid, Platform } from 'react-native';
 import commonStyles from '../styles/commonStyles';
@@ -180,6 +180,7 @@ const styles = StyleSheet.create({
     }, plusIconText: {
         color: colors.white,
         fontSize: Scale(27),
-        textAlign: 'center'
+        // textAlign: 'center',
+        bottom:verticalScale(3)
     }
 })

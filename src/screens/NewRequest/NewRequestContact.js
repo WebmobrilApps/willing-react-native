@@ -1,22 +1,45 @@
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions, Image, PermissionsAndroid } from 'react-native'
 import React, { useState } from 'react'
 import Scale, { verticalScale } from '../../styles/Scale'
 import commonStyles from '../../styles/commonStyles'
 import fontFamily from '../../styles/fontFamily'
-import colors from '../../styles/colors'
 import AppTextInput from '../../components/AppTextInput'
 import CustomBtn from '../../components/CustomBtn'
-const {height} = Dimensions.get('window')
+import imagePath from '../../constants/imagePath'
+import ContactListModal from '../../components/Modal/ContactListModal'
+import screensNames from '../../constants/screensNames'
+import { useNavigation } from '@react-navigation/native'
+const { height } = Dimensions.get('window')
 
-const NewRequestContact = () => {
+
+
+
+
+const NewRequestContact = (props) => {
   const [value, setvalue] = useState('myself')
+  const [visible, setVisible] = useState(false)
+  const navigation = useNavigation()
 
   const onPressRadioBtn = (type) => {
     setvalue(type)
   }
 
+  const getPhoneNumber = async () => {
+    try {
+      const granted = ContactsPicker.requestAccess();
+      if (granted) {
+        const contact = ContactsPicker.pickContact();
+        alert(JSON.stringify(contact));
+      }
+    } catch (e) {
+      console.warn(e);
+    }
+  }
+
   return (
-    <View style={[styles.container,{height:height/1.2}]}>
+    <View style={[styles.container, { height: height / 1.2 }]}>
+      <ContactListModal
+        modalVisible={visible} />
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Please fill the below details:</Text>
       <TouchableOpacity onPress={() => onPressRadioBtn('myself')}
         style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
@@ -26,10 +49,13 @@ const NewRequestContact = () => {
         </View>
         <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>My Details</Text>
       </TouchableOpacity>
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginLeft: Scale(27), marginBottom: verticalScale(5) }]}>Name</Text>
-      <AppTextInput appTxtInputStyle={{ marginBottom: Scale(10) }} />
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginHorizontal: Scale(10), marginBottom: verticalScale(5) }]}>Mobile Number</Text>
-      <AppTextInput />
+      {value == 'myself' ?
+        <>
+          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginLeft: Scale(27), marginBottom: verticalScale(5) }]}>Name</Text>
+          <AppTextInput appTxtInputStyle={{ marginBottom: Scale(10) }} />
+          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginHorizontal: Scale(10), marginBottom: verticalScale(5), marginLeft: Scale(27) }]}>Mobile Number</Text>
+          <AppTextInput />
+        </> : null}
       <TouchableOpacity onPress={() => onPressRadioBtn('someOneElse')}
         style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
         <View style={commonStyles.circle}>
@@ -39,9 +65,21 @@ const NewRequestContact = () => {
         <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Request on behalf of someone else</Text>
 
       </TouchableOpacity>
+      {value == 'someOneElse' ?
+        <>
+          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginLeft: Scale(27), marginBottom: verticalScale(5) }]}>Name</Text>
+          <AppTextInput appTxtInputStyle={{ marginBottom: Scale(10) }} />
+          <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginHorizontal: Scale(10), marginBottom: verticalScale(5), marginLeft: Scale(27) }]}>Mobile Number</Text>
+          <AppTextInput />
+          <TouchableOpacity onPress={() => navigation.navigate(screensNames.contactList)}
+            style={[commonStyles.flexView, { justifyContent: 'flex-start' }]}>
+            <Image source={imagePath.contact} style={styles.contactIcon} />
+            <Text style={commonStyles.fontSize14}>Chose from your contacts list</Text>
+          </TouchableOpacity>
+        </> : null}
 
       <CustomBtn title={'NEXT'}
-        btnStyle={{ width: '70%', alignSelf: 'center',position:'absolute',bottom:verticalScale(70) }}
+        btnStyle={{ width: '70%', alignSelf: 'center', position: 'absolute', bottom: verticalScale(70) }}
 
       />
     </View>
@@ -54,5 +92,10 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     paddingHorizontal: Scale(20),
+  }, contactIcon: {
+    height: Scale(20),
+    width: Scale(20),
+    resizeMode: 'contain',
+    marginRight: Scale(10)
   }
 })

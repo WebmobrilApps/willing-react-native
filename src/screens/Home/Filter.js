@@ -9,9 +9,11 @@ import PostInformation from '../../utility/PostInformation'
 import CustomBtn from '../../components/CustomBtn'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import strings from '../../constants/lng/LocalizedString'
+import { useNavigation } from '@react-navigation/native'
 const {height} = Dimensions.get('window')
 
 const Filter = () => {
+    const navigation = useNavigation()
     const [category, setCategory] = useState('')
     return (
         <SafeAreaView style={styles.container}>
@@ -42,7 +44,8 @@ const Filter = () => {
                             </TouchableOpacity>
                         )
                     }} />
-                    <CustomBtn btnStyle={{width:'80%',alignSelf:'center',position:'absolute',bottom:verticalScale(40)}}
+                    <CustomBtn callBack={() => navigation.goBack()}
+                    btnStyle={{width:'80%',alignSelf:'center',position:'absolute',bottom:verticalScale(40)}}
                     title={strings.NXT}/>
             </View>
             </KeyboardAwareScrollView>
@@ -65,6 +68,5 @@ const styles = StyleSheet.create({
         margin: Scale(5),
         justifyContent: 'center',
         alignItems: 'center'
-
     }
 })

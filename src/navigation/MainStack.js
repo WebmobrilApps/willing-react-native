@@ -20,6 +20,7 @@ import QuietHours from '../screens/LocationFilterScreens/QuietHours';
 import Keyword from '../screens/LocationFilterScreens/Keyword';
 import { useSelector } from 'react-redux';
 import Welcome from '../screens/Auth/Welcome/Welcome';
+import ContactList from '../screens/NewRequest/ContactList';
 
 
 
@@ -65,6 +66,7 @@ const MainStackNavigator = () => {
         <Stack.Screen name={screensNames.category} component={Category} />
         <Stack.Screen name={screensNames.quiteHours} component={QuietHours} />
         <Stack.Screen name={screensNames.keywords} component={Keyword} />
+        <Stack.Screen name={screensNames.contactList} component={ContactList} />
       </>
         : <Stack.Screen name={screensNames.welcomeScreen} component={Welcome} options={{ headerShown: false }} />
       }

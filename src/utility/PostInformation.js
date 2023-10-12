@@ -82,7 +82,7 @@ export default
             { key: 63, value: 'Unlimited', number: ' ', text: 'Unlimited' },
         ],
         expireDate: [
-            { key: 0, value: 1800000, number: '30', text: 'minutes ago' },
+            { key: 0, value: 1800000, number: '', text: ' 30 minutes ago' },
             { key: 1, value: 3600000, number: '', text: '1 hour ago' },
             { key: 2, value: 7200000, number: '2', text: '2 hour ago' },
             { key: 3, value: 10800000, number: '3', text: '3 hour ago' },
@@ -95,7 +95,7 @@ export default
             { key: 10, value: 36000000, number: '10', text: '10 hour ago' },
             { key: 11, value: 39600000, number: '11', text: '11 hour ago' },
             { key: 12, value: 43200000, number: '12', text: '12 hour ago' },
-            { key: 13, value: 86400000, number: '', text: 'one days ago' },
+            { key: 13, value: 86400000, number: '', text: '1 days ago' },
             { key: 14, value: 172800000, number: '2', text: '2 days ago' },
             { key: 15, value: 259200000, number: '3', text: '3 days ago' },
             { key: 16, value: 345600000, number: '4', text: '4 days ago' },
@@ -104,7 +104,7 @@ export default
             { key: 19, value: 604800000, number: '', text: '1 weeks ago' },
             { key: 20, value: 1209600000, number: '2', text: '2 weeks ago' },
             { key: 21, value: 1814400000, number: '3', text: '3 weeks ago' },
-            { key: 22, value: 2592000000, number: '', text: 'one month ago' },
+            { key: 22, value: 2592000000, number: '', text: '1 month ago' },
 
         ],
     }

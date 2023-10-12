@@ -18,3 +18,7 @@ export const setUserType = async (data) => {
   }
 
 
+ export const getAddressByCoords = (latlng,googleApiKey)=>`https://maps.google.com/maps/api/geocode/json?address=${latlng}&key=${googleApiKey}`
+
+
+

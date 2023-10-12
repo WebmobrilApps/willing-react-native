@@ -43,5 +43,6 @@ export default {
     successIcon:require('../assets/images/icons/successIcon.png'),
     hamburgerMenuIcon:require('../assets/images/icons/hamburger_menu_icon.png'),
     dropDownIcon:require('../assets/images/icons/dropDownIcon.png'),
-
+    contact:require('../assets/images/icons/contact.png'),
+    searchIcon:require('../assets/images/icons/searchIcon.png'),
 }

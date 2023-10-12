@@ -7,25 +7,24 @@ import colors from '../styles/colors.js';
 
 
 
-export default function SliderCompWhen(props) {
-    const [radiusIndex, setRadiusIndex] = useState(props.postDetailsRadius)
+export default function SliderCompRadius(props) {
+    const [expireDateIndex,setExpireDateIndex]=useState(props.postDetailsExpireDate)
 
     return (
         <View style={styles.container}>
             <Text style={{ width: "100%", color: "#393777", fontWeight: "bold", fontSize: 13 }}>
-                {PostInformation.radius[radiusIndex].number}
-                <Text>{PostInformation.radius[radiusIndex].text}</Text>
+                <Text>{PostInformation.expireDate[expireDateIndex].text}</Text>
             </Text>
             <Slider
                 thumbTintColor={colors.black}
                 minimumTrackTintColor={colors.black}   
                 maximumTrackTintColor={colors.black}  
-                value={props.postDetailsRadius}
-                maximumValue={63}
+                value={expireDateIndex}
+                maximumValue={22}
                 minimumValue={0}
                 step={1}
-                onSlidingComplete={(sliderValue) => { props.setPostDetailsRadius(sliderValue) }}
-                onValueChange={(sliderValue) => { setRadiusIndex(sliderValue) }} />
+                onSlidingComplete={(sliderValue) => { props.setPostDetailsExpireDate(sliderValue) }}
+                onValueChange={(sliderValue) => { setExpireDateIndex(sliderValue) }} />
         </View>
     )
 }

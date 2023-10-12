@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.regular,
     textAlignVertical: 'top',
     fontSize: Scale(12),
-    minHeight: verticalScale(103),
+    minHeight: verticalScale(120),
     borderRadius:Scale(10),
     borderColor:colors.black,
     borderWidth:1,

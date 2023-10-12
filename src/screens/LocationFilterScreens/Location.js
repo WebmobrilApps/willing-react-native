@@ -63,7 +63,9 @@ const Location = (props) => {
                 placeholder={'Enter city name'}
                 />
                 <View style={{flex:1,alignItems:'flex-end',justifyContent:'flex-end'}}>
-                <CustomBtn title={'ADD TO LIST'}
+                <CustomBtn 
+                btnStyle={{width:'75%',alignSelf:'center',marginBottom:verticalScale(40)}}
+                title={'ADD TO LIST'}
                 />
                 </View>
             </View>
