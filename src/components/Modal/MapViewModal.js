@@ -20,7 +20,7 @@ const MapViewModal = (props) => {
 
   const params = {
     autoComplete: {
-      placeholder: 'placeholder',
+      placeholder: '',
       boxStyle: styles.box,
       value: address,
       // textInputProps: styles.textInputProps,

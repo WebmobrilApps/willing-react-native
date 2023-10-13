@@ -40,7 +40,7 @@ const NewRequestContact = (props) => {
     <View style={[styles.container, { height: height / 1.2 }]}>
       <ContactListModal
         modalVisible={visible} />
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Please fill the below details:</Text>
+      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium,marginBottom:verticalScale(5) }]}>Please fill the below details:</Text>
       <TouchableOpacity onPress={() => onPressRadioBtn('myself')}
         style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
         <View style={commonStyles.circle}>
@@ -57,7 +57,7 @@ const NewRequestContact = (props) => {
           <AppTextInput />
         </> : null}
       <TouchableOpacity onPress={() => onPressRadioBtn('someOneElse')}
-        style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
+        style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10),marginTop:verticalScale(1) }]}>
         <View style={commonStyles.circle}>
           {value == 'someOneElse' ? <View style={commonStyles.checkBox}>
           </View> : null}
@@ -72,7 +72,7 @@ const NewRequestContact = (props) => {
           <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginHorizontal: Scale(10), marginBottom: verticalScale(5), marginLeft: Scale(27) }]}>Mobile Number</Text>
           <AppTextInput />
           <TouchableOpacity onPress={() => navigation.navigate(screensNames.contactList)}
-            style={[commonStyles.flexView, { justifyContent: 'flex-start' }]}>
+            style={[commonStyles.flexView, { justifyContent: 'flex-start',marginTop:verticalScale(20) }]}>
             <Image source={imagePath.contact} style={styles.contactIcon} />
             <Text style={commonStyles.fontSize14}>Chose from your contacts list</Text>
           </TouchableOpacity>

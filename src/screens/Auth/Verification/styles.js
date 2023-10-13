@@ -16,7 +16,8 @@ export default styles = StyleSheet.create({
         borderRadius: Scale(13),
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop:verticalScale(20)
     }, txtInputStyle: {
         // height: verticalScale(35),
         width: Scale(30),

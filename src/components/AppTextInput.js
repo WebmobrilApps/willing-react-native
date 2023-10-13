@@ -42,11 +42,11 @@ export default AppTextInput
 const styles = StyleSheet.create({
   inputContainerStyle: {
     width: '100%',
-    height: verticalScale(38),
+    height: verticalScale(40),
     borderRadius: Scale(30),
     borderColor: colors.black,
     borderWidth: 1,
-    paddingHorizontal: Scale(20),
+    paddingHorizontal: Scale(15),
     marginBottom: Scale(20),
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -1,4 +1,4 @@
-import { Text, Image, View, BackHandler, Platform, Alert, ToastAndroid } from 'react-native'
+import { Text, Image, View, BackHandler, Platform, Alert, ToastAndroid, ImageBackground, StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import WrapperContainer from '../../../components/WrapperContainer'
 import imagePath from '../../../constants/imagePath'
@@ -9,6 +9,7 @@ import colors from '../../../styles/colors'
 import CustomBtn from '../../../components/CustomBtn'
 import { useDispatch } from 'react-redux'
 import types from '../../../redux/types'
+import Scale from '../../../styles/Scale'
 
 
 
@@ -41,25 +42,26 @@ const Welcome = (props) => {
 
   const onSubmit = () => {
     dispatch({
-      type:types.USER_TYPE,
-      payload:'user'
+      type: types.USER_TYPE,
+      payload: 'user'
     })
   }
 
   return (
-    <WrapperContainer
-      wrapperStyle={styles.container}
-      gradient>
-      <View style={{alignItems:'center',flex:0.86,justifyContent:'flex-end'}}>
-      <Image source={imagePath.whiteLogo} style={styles.logoStyle} />
-      <Text style={commonStyles.fontSizeBold30}>{strings.WELCOME_TO_WILLING}</Text>
-      <Text style={[commonStyles.fontSize16, { color: colors.white, textAlign: 'center' }]}>{strings.CONGRATS_YOU_VERIFIED}</Text>
-      <CustomBtn 
-      callBack={() => onSubmit()}
-      title={'PROCEED'} 
-      btnStyle={styles.btnStyle}/>
+    <ImageBackground source={imagePath.bgImage} style={[styles.container]}>
+    <StatusBar barStyle={'light-content'} translucent={true} backgroundColor={'transparent'} />
+    <View style={{flex:1,backgroundColor:colors.blackOpacity70,width:'100%',paddingHorizontal: Scale(35),  }}>
+      <View style={{ alignItems: 'center', flex: 0.86, justifyContent: 'flex-end' }}>
+        <Image source={imagePath.whiteLogo} style={styles.logoStyle} />
+        <Text style={commonStyles.fontSizeBold30}>{strings.WELCOME_TO_WILLING}</Text>
+        <Text style={[commonStyles.fontSize16, { color: colors.white, textAlign: 'center' }]}>{strings.CONGRATS_YOU_VERIFIED}</Text>
+        <CustomBtn
+          callBack={() => onSubmit()}
+          title={'PROCEED'}
+          btnStyle={styles.btnStyle} />
       </View>
-    </WrapperContainer>
+      </View>
+      </ImageBackground>
   )
 }
 

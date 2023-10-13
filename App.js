@@ -3,7 +3,7 @@ import SplashScreen from 'react-native-splash-screen'
 import RootStackNavigation from './src/navigation/navigation'
 import { Provider } from 'react-redux'
 import store from './src/redux/store'
-import { I18nManager, StatusBar } from 'react-native'
+import { StatusBar } from 'react-native'
 import colors from './src/styles/colors'
 import LoadingUtil from './src/utility/LoadingUtil'
 

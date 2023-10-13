@@ -119,7 +119,7 @@ export default StyleSheet.create({
     width: Scale(34),
     resizeMode: 'contain'
   }, categoryButton: {
-    width: Scale(90),
+    width: Scale(98),
     height: 100,
     margin: 10,
     borderRadius: 5,
@@ -128,7 +128,7 @@ export default StyleSheet.create({
       width: 0,
       height: 9,
     },
-    borderColor: colors.borderColor,
+    borderColor: 'rgba(134, 134, 134, 1)',
     borderWidth: 1,
   }, ctegoryImg: {
     marginTop: 10,

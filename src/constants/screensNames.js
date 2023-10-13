@@ -14,7 +14,7 @@ postDetails:'Request Details',
 requestDetails:'Request Details',
 location:'Location',
 category:'Category',
-keywords:'Keywords',
+keywords:'Keyword',
 quiteHours:'Quite hours',
 contactList:'Contact List'
 }

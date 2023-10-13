@@ -28,7 +28,7 @@ const Location = (props) => {
     return (
         <SafeAreaView style={commonStyles.mainContainer}>
             <View style={[commonStyles.mainContainer, { padding: Scale(20),paddingBottom:verticalScale(40) }]}>
-                <View style={[commonStyles.flexView, { alignItems: 'flex-start', paddingBottom: Scale(10) }]}>
+                <View style={[commonStyles.flexView, { alignItems: 'flex-start', paddingBottom: Scale(10),paddingTop:verticalScale(10) }]}>
                     <View style={{ flex: 1 }}>
                         <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>From Everywhere</Text>
                         <Text style={[commonStyles.fontSize10, { marginRight: Scale(50) }]}>Lorem ipsum dolor sit amet consectetur. Lobortis vitae
@@ -41,7 +41,7 @@ const Location = (props) => {
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity onPress={() => setDistance(!distance)}
-                    style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
+                    style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10),marginBottom:verticalScale(0) }]}>
                     <View style={commonStyles.circle}>
                         {!!distance ? <View style={commonStyles.checkBox}>
                         </View> : null}
@@ -50,7 +50,7 @@ const Location = (props) => {
                 </TouchableOpacity>
                 <SliderCompWhen {...params.sliderWhere} />
                 <TouchableOpacity onPress={() => setCity(!city)}
-                    style={[commonStyles.flexView, { justifyContent: 'flex-start', marginBottom: verticalScale(10) }]}>
+                    style={[commonStyles.flexView, { justifyContent: 'flex-start', marginBottom: verticalScale(3),marginTop:verticalScale(12) }]}>
                     <View style={commonStyles.circle}>
                         {!!city ? <View style={commonStyles.checkBox}>
                         </View> : null}

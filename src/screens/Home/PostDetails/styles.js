@@ -4,9 +4,10 @@ import Scale, { verticalScale } from "../../../styles/Scale";
 
 export default styles = StyleSheet.create({
     container:{
-        padding:Scale(20),
+        padding:Scale(10),
         borderBottomColor:colors.borderColor,
         borderBottomWidth:1,
+        paddingHorizontal:Scale(20)
     },iconStyle:{
         height:Scale(16),
         width:Scale(16),
@@ -31,10 +32,10 @@ export default styles = StyleSheet.create({
         borderColor:'rgba(186, 186, 186, 1)',
         borderWidth:1,
         backgroundColor:colors.white,
-        padding:Scale(5)
+        padding:Scale(10),
     },upArrow:{
-        height:Scale(15),
-        width:Scale(15),
+        height:Scale(10),
+        width:Scale(10),
         resizeMode:'contain',
         tintColor:colors.theme,
     },socialIconStyle:{

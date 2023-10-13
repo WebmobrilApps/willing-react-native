@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, } from 'react-native';
 import Slider from '@react-native-community/slider'
 import PostInformation from '../utility/PostInformation.js';
 import colors from '../styles/colors.js';
+import Scale from '../styles/Scale.js';
 
 
 
@@ -16,6 +17,7 @@ export default function SliderCompRadius(props) {
                 <Text>{PostInformation.expireDate[expireDateIndex].text}</Text>
             </Text>
             <Slider
+                // style={{right:8}}
                 thumbTintColor={colors.black}
                 minimumTrackTintColor={colors.black}   
                 maximumTrackTintColor={colors.black}  

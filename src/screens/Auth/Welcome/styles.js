@@ -10,9 +10,11 @@ export default styles = StyleSheet.create({
         marginTop: verticalScale(150),
         marginBottom: verticalScale(50)
     }, container: {
-        paddingHorizontal: Scale(35),
+        flex:1,
+        // paddingHorizontal: Scale(35),
+        backgroundColor:colors.blackOpacity70
     }, btnStyle: {
-        width: '90%',
+        // width: '70%',
         backgroundColor: 'transparent',
         borderColor: colors.white,
         borderWidth: 1,

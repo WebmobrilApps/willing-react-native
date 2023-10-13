@@ -30,7 +30,7 @@ const QuietHours = () => {
       <ItemSeperator />
 
       <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20) }]}>From</Text>
+        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20),marginBottom:verticalScale(10) }]}>From</Text>
         <View style={styles.timeContainer}>
           <DatePicker mode='time' date={date} onDateChange={setDate}
             is24hourSource={'device'}
@@ -43,7 +43,7 @@ const QuietHours = () => {
 
       </View>
       <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20), marginTop: verticalScale(30) }]}>Till</Text>
+        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: Scale(20), marginTop: verticalScale(30),bottom:verticalScale(-10) }]}>Till</Text>
         <View style={styles.timeContainer}>
           <DatePicker mode='time' date={date} onDateChange={setDate}
             is24hourSource={'device'}

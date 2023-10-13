@@ -65,7 +65,7 @@ const Notifications = (props) => {
   return (
     <SafeAreaView style={commonStyles.mainContainer}>
       <View style={commonStyles.mainContainer}>
-        <View style={[commonStyles.flexView, { padding: Scale(20), alignItems: 'flex-start', paddingBottom: Scale(10) }]}>
+        <View style={[commonStyles.flexView, { padding: Scale(20), alignItems: 'flex-start', paddingBottom: Scale(10),paddingTop:verticalScale(32) }]}>
           <View style={{ flex: 1 }}>
             <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>Enable notification</Text>
             <Text style={[commonStyles.fontSize10, { marginRight: Scale(50) }]}>Lorem ipsum dolor sit amet consectetur. Lobortis vitae

@@ -108,10 +108,10 @@ console.log(props)
         multiline={true}
       />
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Image</Text>
-      <TouchableOpacity style={{ marginTop: verticalScale(10) }}>
+      <TouchableOpacity style={{ marginTop: verticalScale(10),marginLeft:Scale(5) }}>
         <Image source={imagePath.plusIcon} style={styles.plusImgStyle} />
       </TouchableOpacity>
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10) }]}>Location-Default Current</Text>
+      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, marginVertical: verticalScale(10),marginBottom:verticalScale(2) }]}>Location-Default Current</Text>
       <TouchableOpacity onPress={() => setModal(true)}>
       <AppTextInput editable={false} location appTxtInputStyle={{ width: '100%', marginBottom: verticalScale(10) }} />
       </TouchableOpacity>
@@ -121,18 +121,18 @@ console.log(props)
                 commonStyles.fontSize14,
                 {
                   fontFamily: fontFamily.medium,
-                  marginBottom: verticalScale(10),
+                  marginBottom: verticalScale(2),
                 },
               ]}
             >
               Urgency Level
             </Text>
             <Dropdown
-              style={[commonStyles.dropdown, {}]}
+              style={[commonStyles.dropdown, {marginBottom:verticalScale(10)}]}
               renderRightIcon={() => (
                 <Image
                   source={imagePath.dropDownIcon}
-                  style={{ height: 12, width: 12, resizeMode: "contain" }}
+                  style={{ height: 12, width: 12, resizeMode: "contain",left:10 }}
                 />
               )}
               placeholderStyle={commonStyles.placeholderStyle}

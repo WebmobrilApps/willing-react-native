@@ -168,7 +168,7 @@ const NewRequestMain = ({ navigation, route }) => {
     //   </ProgressSteps>
     // </View>
     <View style={styles.container}>
-      <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: 'center',marginVertical:verticalScale(20),marginBottom:verticalScale(50) }}>
+      <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: 'center',marginVertical:verticalScale(18),marginBottom:verticalScale(50) }}>
         <TouchableOpacity 
         onPress={()=>setActivePage(0)}
         style={[styles.circleContainer,{backgroundColor:activePage == 1 || activePage==2 ? colors.theme : null,borderColor:activePage == 1 || activePage==2 ? colors.theme : null, }]}>

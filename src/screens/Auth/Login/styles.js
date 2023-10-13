@@ -11,14 +11,14 @@ export default styles = StyleSheet.create({
         height:Scale(140),
         width:Scale(140),
         marginBottom:Scale(120),
-        marginTop:verticalScale(80),
+        marginTop:verticalScale(60),
         alignSelf:'center'
     },dropdown: {
         height: verticalScale(38),
         borderColor: colors.black,
         borderWidth: Scale(1),
         borderRadius: Scale(20),
-        paddingHorizontal: Scale(20),
+        paddingHorizontal: Scale(24),
         marginBottom: verticalScale(20),
         color: colors.black,
         width: '100%',

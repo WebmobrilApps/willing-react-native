@@ -12,18 +12,18 @@ const Keyword = () => {
     return (
         <SafeAreaView style={commonStyles.mainContainer}>
             <View style={[commonStyles.mainContainer, { padding: Scale(20) }]}>
-                <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>Send notification if the following words appears inside the
+                <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium,marginBottom:verticalScale(10) }]}>Send notification if the following words appears inside the
                     request</Text>
                 <AppTextInput
                     placeholder={'Enter Keyword'}
                     appTxtInputStyle={{ borderRadius: 0, marginVertical: Scale(15) }} />
                 <View style={[commonStyles.flexView, { justifyContent: 'flex-start' }]}>
                     <TouchableOpacity style={styles.bubbleStyle}>
-                        <Text style={[commonStyles.fontSize10, { marginRight: Scale(5) }]}>Medical</Text>
+                        <Text style={[commonStyles.fontSize10, { marginRight: Scale(12) }]}>Medical</Text>
                         <Text style={commonStyles.fontSize10}>x</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.bubbleStyle}>
-                        <Text style={[commonStyles.fontSize10, { marginRight: Scale(5) }]}>Vehical</Text>
+                        <Text style={[commonStyles.fontSize10, { marginRight: Scale(12) }]}>Vehical</Text>
                         <Text style={commonStyles.fontSize10}>x</Text>
                     </TouchableOpacity>
                 </View>

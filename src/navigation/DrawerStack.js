@@ -48,6 +48,7 @@ const DrawerStack = (props) => {
           // borderRadius:Scale(20),
           // borderTopLeftRadius:0,
           // borderBottomLeftRadius:0
+          // height:'90%'
         }
       }}>
       <Drawer.Screen name="WILLING" component={TabsNavigation} />

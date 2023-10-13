@@ -112,8 +112,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: verticalScale(10)
     }, iconStyle: {
-        height: Scale(22),
-        width: Scale(22),
+        height: Scale(24),
+        width: Scale(24),
         resizeMode: 'contain',
         marginRight: Scale(10),
         tintColor: colors.theme

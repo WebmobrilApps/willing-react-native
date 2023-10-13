@@ -115,7 +115,7 @@ const Login = (props) => {
         <CustomBtn
           callBack={onSubmit}
           title={strings.NXT}
-          btnStyle={{ marginTop: Scale(140) }} />
+          btnStyle={{ marginTop: Scale(160) }} />
       </KeyboardAwareScrollView>
     </WrapperContainer>
   )
