@@ -18,7 +18,7 @@ export default styles = StyleSheet.create({
         borderColor: colors.black,
         borderWidth: Scale(1),
         borderRadius: Scale(20),
-        paddingHorizontal: Scale(24),
+        paddingHorizontal: Scale(22),
         marginBottom: verticalScale(20),
         color: colors.black,
         width: '100%',

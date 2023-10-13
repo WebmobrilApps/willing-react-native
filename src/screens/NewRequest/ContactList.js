@@ -10,22 +10,28 @@ import imagePath from '../../constants/imagePath';
 
 const ContactList = (props) => {
 
-    let [contacts, setContacts] = useState([])
-
-    useEffect(() => {
-        if (Platform.OS === 'android') {
-            PermissionsAndroid.request(
-                PermissionsAndroid.PERMISSIONS.READ_CONTACTS, {
-                title: 'Contacts',
-                message: 'This app would like to view your contacts.',
-            }).then(() => {
-                loadContacts();
-            }
-            );
-        } else {
-            loadContacts();
+    let [data, setData] = useState([
+        {
+            id:'1',
+            name:'xyaz',
+            image:imagePath.giveAwayItem
         }
-    }, []);
+    ])
+
+    // useEffect(() => {
+    //     if (Platform.OS === 'android') {
+    //         PermissionsAndroid.request(
+    //             PermissionsAndroid.PERMISSIONS.READ_CONTACTS, {
+    //             title: 'Contacts',
+    //             message: 'This app would like to view your contacts.',
+    //         }).then(() => {
+    //             loadContacts();
+    //         }
+    //         );
+    //     } else {
+    //         // loadContacts();
+    //     }
+    // }, []);
 
     const getAvatarInitials = (textString) => {
         if (!textString) return '';
@@ -63,7 +69,7 @@ const ContactList = (props) => {
                     (a, b) =>
                         a.givenName.toLowerCase() > b.givenName.toLowerCase(),
                 );
-                setContacts(contacts);
+                setData(contacts);
                 console.log('contacts', contacts);
             });
         } else {
@@ -72,7 +78,7 @@ const ContactList = (props) => {
                     (a, b) =>
                         a.givenName.toLowerCase() > b.givenName.toLowerCase(),
                 );
-                setContacts(contacts);
+                setData(contacts);
                 console.log('contacts', contacts);
             });
         }
@@ -83,7 +89,7 @@ const ContactList = (props) => {
         <View style={[styles.container, { paddingHorizontal: Scale(20),paddingTop:verticalScale(20) }]}>
             <View style={styles.inputContainerStyle}>
                 <TextInput
-                    onChangeText={search}
+                    // onChangeText={search}
                     placeholder="Choose a Contact"
                     placeholderTextColor={colors.black}
                     style={styles.searchBar}
@@ -91,28 +97,19 @@ const ContactList = (props) => {
                 <Image source={imagePath.searchIcon} style={styles.searchIconStyle}/>
             </View>
             <FlatList
-                data={contacts}
-                renderItem={(contact) => {
+                data={data}
+                renderItem={(item) => {
                     // {
                     //     console.log('contact -> ' + JSON.stringify(contact));
                     // }
                     return (
-                        <TouchableOpacity onPress={() =>  console.log('itemmmmm++++',contact)}
+                        <TouchableOpacity onPress={() =>  console.log('itemmmmm++++')}
                         style={styles.cardContainer}>
-                            <Avatar
-                                img={
-                                    contact.item.hasThumbnail ?
-                                        { uri: contact.item.thumbnailPath } : undefined
-                                }
-                                placeholder={getAvatarInitials(
-                                    `${contact.item.givenName} ${contact.item.familyName}`,
-                                )}
-                                width={40}
-                                height={40}
-                            />
+                        <View style={{height:50,width:50,backgroundColor:'rgba(217, 217, 217, 1)',borderRadius:50}}>
+                        </View>
                             <Text
                                 style={
-                                    [commonStyles.fontSize14, { marginLeft: 15 }]}>{`${contact.item.givenName} ${contact.item.familyName}`}</Text>
+                                    [commonStyles.fontSize14, { marginLeft: 15 }]}>Abcdefgh</Text>
                         </TouchableOpacity>
                     );
                 }}

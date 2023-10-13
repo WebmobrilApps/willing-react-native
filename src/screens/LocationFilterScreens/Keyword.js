@@ -6,8 +6,10 @@ import fontFamily from '../../styles/fontFamily'
 import AppTextInput from '../../components/AppTextInput'
 import colors from '../../styles/colors'
 import CustomBtn from '../../components/CustomBtn'
+import { useNavigation } from '@react-navigation/native'
 
 const Keyword = () => {
+    const navigation = useNavigation()
 
     return (
         <SafeAreaView style={commonStyles.mainContainer}>
@@ -29,6 +31,7 @@ const Keyword = () => {
                 </View>
                 <View style={{ flex: 1, justifyContent: 'flex-end', paddingBottom: verticalScale(60) }}>
                     <CustomBtn title={'ADD TO LIST'}
+                    callBack={() => navigation.goBack()}
                         btnStyle={{ width: '75%', alignSelf: 'center' }} />
                 </View>
             </View>

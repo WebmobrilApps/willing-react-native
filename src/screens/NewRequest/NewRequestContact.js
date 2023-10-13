@@ -6,7 +6,6 @@ import fontFamily from '../../styles/fontFamily'
 import AppTextInput from '../../components/AppTextInput'
 import CustomBtn from '../../components/CustomBtn'
 import imagePath from '../../constants/imagePath'
-import ContactListModal from '../../components/Modal/ContactListModal'
 import screensNames from '../../constants/screensNames'
 import { useNavigation } from '@react-navigation/native'
 const { height } = Dimensions.get('window')
@@ -24,22 +23,9 @@ const NewRequestContact = (props) => {
     setvalue(type)
   }
 
-  const getPhoneNumber = async () => {
-    try {
-      const granted = ContactsPicker.requestAccess();
-      if (granted) {
-        const contact = ContactsPicker.pickContact();
-        alert(JSON.stringify(contact));
-      }
-    } catch (e) {
-      console.warn(e);
-    }
-  }
 
   return (
     <View style={[styles.container, { height: height / 1.2 }]}>
-      <ContactListModal
-        modalVisible={visible} />
       <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium,marginBottom:verticalScale(5) }]}>Please fill the below details:</Text>
       <TouchableOpacity onPress={() => onPressRadioBtn('myself')}
         style={[commonStyles.flexView, { justifyContent: 'flex-start', marginVertical: verticalScale(10) }]}>
@@ -80,7 +66,7 @@ const NewRequestContact = (props) => {
 
       <CustomBtn title={'NEXT'}
         btnStyle={{ width: '70%', alignSelf: 'center', position: 'absolute', bottom: verticalScale(70) }}
-
+        callBack={() => navigation.navigate('WILLING')}
       />
     </View>
   )

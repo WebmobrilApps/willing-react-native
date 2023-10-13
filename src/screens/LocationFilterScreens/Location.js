@@ -7,8 +7,10 @@ import imagePath from '../../constants/imagePath';
 import SliderCompWhen from '../../components/SliderCompWhen';
 import AppTextInput from '../../components/AppTextInput';
 import CustomBtn from '../../components/CustomBtn';
+import { useNavigation } from '@react-navigation/native';
 
 const Location = (props) => {
+    const navigation = useNavigation()
     const [isEnabled, setIsEnabled] = useState(false);
     const [distance, setDistance] = useState(false)
     const [city, setCity] = useState(false)
@@ -64,6 +66,7 @@ const Location = (props) => {
                 />
                 <View style={{flex:1,alignItems:'flex-end',justifyContent:'flex-end'}}>
                 <CustomBtn 
+                callBack={() => navigation.goBack()}
                 btnStyle={{width:'75%',alignSelf:'center',marginBottom:verticalScale(40)}}
                 title={'ADD TO LIST'}
                 />
