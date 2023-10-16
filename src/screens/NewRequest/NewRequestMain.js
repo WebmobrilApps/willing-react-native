@@ -58,7 +58,6 @@ import NewRequestChooseCategory from './NewRequestChooseCategory';
 import NewRequestDetails from './NewRequestDetails';
 import NewRequestContact from './NewRequestContact';
 import styles from './styles';
-import CustomBtn from '../../components/CustomBtn';
 import commonStyles from '../../styles/commonStyles';
 import { verticalScale } from '../../styles/Scale';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';

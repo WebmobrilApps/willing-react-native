@@ -26,7 +26,7 @@ const Filter = () => {
         showsVerticalScrollIndicator={false}>
             <View style={[styles.container, { padding: Scale(20),height:height/1.12 }]}>
                 <View style={[commonStyles.flexView, { marginVertical: verticalScale(15) }]}>
-                    <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Filter by keyword</Text>
+                    <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>{strings.filter_byKeyword}</Text>
                     <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium, color: 'rgba(138, 138, 138, 1)' }]}>Clear All</Text>
                 </View>
                 <AppTextInput appTxtInputStyle={{marginBottom:verticalScale(15)}}/>
@@ -46,7 +46,7 @@ const Filter = () => {
                     }} />
                     <CustomBtn callBack={() => navigation.goBack()}
                     btnStyle={{width:'80%',alignSelf:'center',position:'absolute',bottom:verticalScale(40)}}
-                    title={strings.NXT}/>
+                    title={strings.next_uppercase}/>
             </View>
             </KeyboardAwareScrollView>
         </SafeAreaView>

@@ -16,6 +16,7 @@ import { DrawerActions, useNavigation } from '@react-navigation/core';
 import screensNames from '../constants/screensNames';
 import { useDispatch } from 'react-redux';
 import types from '../redux/types';
+import strings from '../constants/lng/LocalizedString';
 
 
 
@@ -62,9 +63,9 @@ const CustomDrawer = props => {
   const topicArr = [
     {
       id: 1,
-      title: 'Home',
+      title: "Home",
       image: imagePath.home,
-      onPress: () => onTopicPress("WILLING"),
+      onPress: () => onTopicPress(strings.app_name_uppercase),
     },
     {
       id: 2,
@@ -117,8 +118,7 @@ const CustomDrawer = props => {
         style={[styles.linkBox,{borderTopColor: topic.id == 1 ? colors.borderColor: null,borderTopWidth:topic.id == 1 ? 1 :null}]}>
         <Image source={topic.image} style={styles.imgStyle}/>
         <Text style={[commonStyles.fontSize14,{color:colors.black}]}>{topic.title}</Text>
-      </TouchableOpacity
-      >
+      </TouchableOpacity>
     ));
   };
 

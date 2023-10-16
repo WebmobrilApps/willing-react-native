@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Modal, TouchableOpacity, TouchableWithoutFeedba
 import React from 'react'
 import colors from '../../styles/colors'
 import Scale, { verticalScale } from '../../styles/Scale'
-import CustomBtn from '../CustomBtn'
 import commonStyles from '../../styles/commonStyles'
 import fontFamily from '../../styles/fontFamily'
 import imagePath from '../../constants/imagePath'

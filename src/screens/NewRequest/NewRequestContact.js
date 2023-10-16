@@ -9,6 +9,7 @@ import imagePath from '../../constants/imagePath'
 import screensNames from '../../constants/screensNames'
 import { useNavigation } from '@react-navigation/native'
 const { height } = Dimensions.get('window')
+import strings from '../../constants/lng/LocalizedString'
 
 
 
@@ -33,7 +34,7 @@ const NewRequestContact = (props) => {
           {value == 'myself' ? <View style={commonStyles.checkBox}>
           </View> : null}
         </View>
-        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>My Details</Text>
+        <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>{strings.newRequest_contactOptionMyDetails}</Text>
       </TouchableOpacity>
       {value == 'myself' ?
         <>
@@ -64,9 +65,9 @@ const NewRequestContact = (props) => {
           </TouchableOpacity>
         </> : null}
 
-      <CustomBtn title={'NEXT'}
+      <CustomBtn title={strings.next_uppercase}
         btnStyle={{ width: '70%', alignSelf: 'center', position: 'absolute', bottom: verticalScale(70) }}
-        callBack={() => navigation.navigate('WILLING')}
+        callBack={() => navigation.navigate(strings.app_name_uppercase)}
       />
     </View>
   )

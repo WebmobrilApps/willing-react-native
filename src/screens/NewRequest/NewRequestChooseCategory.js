@@ -6,6 +6,7 @@ import PostInformation from '../../utility/PostInformation';
 import colors from '../../styles/colors';
 import commonStyles from '../../styles/commonStyles';
 import { verticalScale } from '../../styles/Scale';
+import strings from '../../constants/lng/LocalizedString';
 
 const NewRequestChooseCategory = (props) => {
 
@@ -46,7 +47,7 @@ const NewRequestChooseCategory = (props) => {
   return (
     <View style={[commonStyles.mainContainer,]}>
       <View style={[commonStyles.newRequestChooseCategory]}>{renderCategories()}</View>  
-       <CustomBtn title={'NEXT'}
+       <CustomBtn title={strings.next_uppercase}
       btnStyle={{ width: '60%', alignSelf: 'center',position:'absolute',bottom:0 }}
       callBack={()=>props.onClick(1)}
      />

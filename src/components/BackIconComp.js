@@ -3,13 +3,14 @@ import React from 'react'
 import imagePath from '../constants/imagePath'
 import Scale from '../styles/Scale'
 import { useNavigation } from '@react-navigation/native'
+import { isRTL } from '../constants/constants'
 
 const BackIconComp = () => {
   const navigation = useNavigation()
   return (
     <TouchableOpacity onPress={() => navigation.goBack()}
       style={styles.container}>
-      <Image source={imagePath.backIcon} style={styles.imgStyle} />
+      <Image source={imagePath.backIcon} style={[styles.imgStyle,{transform:[{rotate:isRTL? '180deg': '0deg'}]}]} />
     </TouchableOpacity>
   )
 }

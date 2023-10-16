@@ -8,6 +8,7 @@ import SliderCompWhen from '../../components/SliderCompWhen';
 import AppTextInput from '../../components/AppTextInput';
 import CustomBtn from '../../components/CustomBtn';
 import { useNavigation } from '@react-navigation/native';
+import strings from '../../constants/lng/LocalizedString';
 
 const Location = (props) => {
     const navigation = useNavigation()
@@ -68,7 +69,7 @@ const Location = (props) => {
                 <CustomBtn 
                 callBack={() => navigation.goBack()}
                 btnStyle={{width:'75%',alignSelf:'center',marginBottom:verticalScale(40)}}
-                title={'ADD TO LIST'}
+                title={strings.settingsNotification_addToList}
                 />
                 </View>
             </View>

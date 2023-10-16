@@ -22,6 +22,8 @@ import { useSelector } from 'react-redux';
 import Welcome from '../screens/Auth/Welcome/Welcome';
 import ContactList from '../screens/NewRequest/ContactList';
 import ShareIconComp from '../components/ShareIconComp';
+import { I18nManager } from 'react-native';
+import { isRTL } from '../constants/constants';
 
 
 
@@ -40,11 +42,8 @@ const MainStackNavigator = () => {
         headerTitleAlign: 'center',
         headerShadowVisible: false,
         headerTintColor: colors.white,
-        headerLeft: () => {
-          return (
-            <BackIconComp />
-          )
-        },
+        headerLeft:()=>isRTL == true ? '' : <BackIconComp />,
+        headerRight:()=>isRTL ? <BackIconComp/> : '' ,
         headerTitleStyle: {
           fontSize: Scale(18),
           fontFamily: fontFamily.medium,
@@ -57,13 +56,8 @@ const MainStackNavigator = () => {
         <Stack.Screen name="homePageMain" component={DrawerStack} options={{ headerShown: false }} />
         <Stack.Screen name={screensNames.newRequestMain} component={NewRequestMain} />
         <Stack.Screen name={screensNames.filter} component={Filter} />
-        <Stack.Screen name={screensNames.postDetails} component={PostDetails} options={{
-          headerRight: () => {
-            return (
-              <ShareIconComp />
-            )
-          },
-        }}/>
+        <Stack.Screen name={screensNames.postDetails} component={PostDetails} options={{headerRight: () => isRTL ? <BackIconComp /> :<ShareIconComp/>,
+        headerLeft: () => isRTL ? <ShareIconComp/> : <BackIconComp/>}}/>
         <Stack.Screen name={screensNames.notification} component={Notifications} />
         <Stack.Screen name={screensNames.helpCenter} component={Support} />
         <Stack.Screen name={screensNames.terms} component={Terms} />

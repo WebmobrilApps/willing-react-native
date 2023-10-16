@@ -5,6 +5,7 @@ import { googleApiKey, isIOS } from "../../constants/constants";
 import { getAddressByCoords } from "../../redux/actions";
 import AutoComplete from "../../screens/NewRequest/autoComplete/AutoComplete";
 import CustomBtn from "../CustomBtn";
+import strings from "../../constants/lng/LocalizedString";
 
 const MapViewModal = (props) => {
   const hideMapModal = props.hideMapModal;
@@ -148,7 +149,7 @@ const MapViewModal = (props) => {
           }}
         />
       </MapView>
-      <CustomBtn title={'Set Location'}
+      <CustomBtn title={strings.location_setLocation}
       callBack={updateContextWithAddress}
       btnStyle={styles.btn}/>
     </View>

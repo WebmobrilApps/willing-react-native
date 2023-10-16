@@ -1,11 +1,11 @@
 import LocalizedStrings from 'react-native-localization';
 import en from './en';
-import fr from './fr';
+import he from './he';
 
 
 let strings = new LocalizedStrings({
   en: en,
-  fr: fr,
+  he: he,
 });
 
 export default strings;

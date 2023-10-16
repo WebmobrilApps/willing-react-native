@@ -9,6 +9,7 @@ import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import imagePath from '../constants/imagePath';
 import screensNames from '../constants/screensNames';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
+import strings from '../constants/lng/LocalizedString';
 
 
 const Drawer = createDrawerNavigator();
@@ -18,7 +19,7 @@ const DrawerStack = (props) => {
 
   return (
     <Drawer.Navigator
-      initialRouteName="WILLING"
+      initialRouteName={strings.app_name_uppercase}
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
         headerTitleAlign: 'center',
@@ -51,7 +52,7 @@ const DrawerStack = (props) => {
           // height:'90%'
         }
       }}>
-      <Drawer.Screen name="WILLING" component={TabsNavigation} />
+      <Drawer.Screen name={strings.app_name_uppercase} component={TabsNavigation} />
     </Drawer.Navigator>
   );
 };

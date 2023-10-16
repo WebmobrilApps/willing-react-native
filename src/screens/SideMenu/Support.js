@@ -24,7 +24,7 @@ const Support = () => {
         <TextInputComp/>
         <CustomBtn btnStyle={{marginTop:verticalScale(200)}}
         callBack={() => navigation.goBack()}
-        title={strings.NXT}/>
+        title={strings.next_uppercase}/>
       </View>
     </SafeAreaView>
   )

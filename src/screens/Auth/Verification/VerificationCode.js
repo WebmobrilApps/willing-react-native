@@ -107,7 +107,7 @@ const VerificationCode = (props) => {
             borderWidth: 1,
             marginTop: verticalScale(50)
           }}
-          title={strings.NXT} />
+          title={strings.next_uppercase} />
       </View>
     </WrapperContainer>
   )

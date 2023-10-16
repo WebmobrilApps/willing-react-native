@@ -9,6 +9,8 @@ import imagePath from '../../constants/imagePath'
 import ItemSeperator from '../../components/ItemSeperator'
 import screensNames from '../../constants/screensNames'
 import { useNavigation } from '@react-navigation/native'
+import { isRTL } from '../../constants/constants'
+import strings from '../../constants/lng/LocalizedString'
 
 const Notifications = (props) => {
   const navigation = useNavigation()
@@ -55,7 +57,7 @@ const Notifications = (props) => {
           <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>{title}</Text>
           <Text style={commonStyles.fontSize10}>{subTitle}</Text>
         </View>
-        <Image source={imagePath.backIcon} style={[styles.rightArro, { transform: [{ rotate: '180deg' }] }]} />
+        <Image source={imagePath.backIcon} style={[styles.rightArro, { transform: [{ rotate: isRTL ? '360deg' : '180deg' }] }]} />
       </TouchableOpacity>
     )
   }
@@ -67,10 +69,8 @@ const Notifications = (props) => {
       <View style={commonStyles.mainContainer}>
         <View style={[commonStyles.flexView, { padding: Scale(20), alignItems: 'flex-start', paddingBottom: Scale(10),paddingTop:verticalScale(32) }]}>
           <View style={{ flex: 1 }}>
-            <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>Enable notification</Text>
-            <Text style={[commonStyles.fontSize10, { marginRight: Scale(50) }]}>Lorem ipsum dolor sit amet consectetur. Lobortis vitae
-              sitsed mattis viverra hendrerit tempus. Ornarear ticufames
-              rhoncus </Text>
+            <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>{strings.settingsNotification_main}</Text>
+            <Text style={[commonStyles.fontSize10, { marginRight: Scale(50) }]}>{strings.settingsNotification_mainDesc}</Text>
           </View>
           <TouchableOpacity onPress={() => setIsEnabled(!isEnabled)}>
             <Image source={!!isEnabled ? imagePath.activeSwitch : imagePath.inActiveSwitch}

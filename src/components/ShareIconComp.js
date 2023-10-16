@@ -4,13 +4,14 @@ import imagePath from '../constants/imagePath'
 import Scale from '../styles/Scale'
 import { useNavigation } from '@react-navigation/native'
 import colors from '../styles/colors'
+import { isRTL } from '../constants/constants'
 
 const ShareIconComp = () => {
   const navigation = useNavigation()
   return (
     <TouchableOpacity
       style={styles.container}>
-      <Image source={imagePath.share} style={styles.imgStyle} />
+      <Image source={imagePath.share} style={[styles.imgStyle,{transform:[{rotate:isRTL ? '180deg' :'0deg'}]}]} />
     </TouchableOpacity>
   )
 }

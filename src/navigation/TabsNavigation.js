@@ -10,6 +10,7 @@ import commonStyles from '../styles/commonStyles';
 import screensNames from '../constants/screensNames';
 import { useEffect, useState } from 'react';
 import Geolocation from '@react-native-community/geolocation';
+import strings from '../constants/lng/LocalizedString';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -134,7 +135,7 @@ function TabsNavigation(props) {
                     <Text style={[commonStyles.fontSize14, styles.plusIconText]}>+</Text>
                 </TouchableOpacity>
                 <Tab.Navigator
-                    initialRouteName='Location'
+                    initialRouteName={strings.tabBar_requestsByLocation}
                     tabBarPosition='top'
                     screenOptions={{
                         swipeEnabled:false,
@@ -150,9 +151,9 @@ function TabsNavigation(props) {
                     }}
                     sceneContainerStyle={{ backgroundColor: colors.white }}
                 >
-                <Tab.Screen name="Recent" component={RecentPosts} />
-                <Tab.Screen name="Location" component={AllPosts} />
-                <Tab.Screen name="Mine" component={MinePosts} />
+                <Tab.Screen name={strings.tabBar_requestsByRecent} component={RecentPosts} />
+                <Tab.Screen name={strings.tabBar_requestsByLocation} component={AllPosts} />
+                <Tab.Screen name={strings.tabBar_myRequests} component={MinePosts} />
                 </Tab.Navigator>
             </View>
         </SafeAreaView>

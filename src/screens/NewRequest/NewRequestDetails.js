@@ -12,6 +12,7 @@ import SliderCompWhen from '../../components/SliderCompWhen';
 import MapViewModal from '../../components/Modal/MapViewModal';
 import { Dropdown } from 'react-native-element-dropdown';
 import SliderCompRadius from '../../components/SliderCompRadius';
+import strings from '../../constants/lng/LocalizedString';
 const {height} = Dimensions.get('window')
 
 const NewRequestDetails = (props) => {
@@ -107,7 +108,7 @@ console.log(props)
       <TextInputComp
         multiline={true}
       />
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Image</Text>
+      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>{strings.fullImage_image}</Text>
       <TouchableOpacity style={{ marginTop: verticalScale(10),marginLeft:Scale(5) }}>
         <Image source={imagePath.plusIcon} style={styles.plusImgStyle} />
       </TouchableOpacity>
@@ -162,16 +163,16 @@ console.log(props)
             />
           </View>
 
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>Until when to post?</Text>
+      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>{strings.newRequest_whenDescription}</Text>
       <SliderCompRadius
         postDetailsExpireDate={postDetailsExpireDate}
         setPostDetailsExpireDate={setPostDetailsExpireDate}
       />
-      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>What radius from the location should be posted?</Text>
+      <Text style={[commonStyles.fontSize14, { fontFamily: fontFamily.medium }]}>{strings.newRequest_whereDescription}</Text>
       <SliderCompWhen {...params.sliderWhere} />
 
       </ScrollView>
-        <CustomBtn title={'NEXT'}
+        <CustomBtn title={strings.next_uppercase}
         btnStyle={{ width: '70%', alignSelf: 'center', }}
         callBack={() => props.onClick(2)}
        />

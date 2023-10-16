@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, } from 'react-native';
 import Slider from '@react-native-community/slider'
 import PostInformation from '../utility/PostInformation.js';
 import colors from '../styles/colors.js';
-import Scale from '../styles/Scale.js';
 
 
 

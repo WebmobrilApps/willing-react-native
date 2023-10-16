@@ -7,6 +7,7 @@ import AppTextInput from '../../components/AppTextInput'
 import colors from '../../styles/colors'
 import CustomBtn from '../../components/CustomBtn'
 import { useNavigation } from '@react-navigation/native'
+import strings from '../../constants/lng/LocalizedString'
 
 const Keyword = () => {
     const navigation = useNavigation()
@@ -30,7 +31,7 @@ const Keyword = () => {
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, justifyContent: 'flex-end', paddingBottom: verticalScale(60) }}>
-                    <CustomBtn title={'ADD TO LIST'}
+                    <CustomBtn title={strings.settingsNotification_addToList}
                     callBack={() => navigation.goBack()}
                         btnStyle={{ width: '75%', alignSelf: 'center' }} />
                 </View>

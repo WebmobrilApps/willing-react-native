@@ -7,6 +7,7 @@ import fontFamily from '../../../styles/fontFamily'
 import colors from '../../../styles/colors'
 import Scale, { verticalScale } from '../../../styles/Scale'
 import ItemSeperator from '../../../components/ItemSeperator'
+import { isRTL } from '../../../constants/constants'
 
 const { width } = Dimensions.get('window')
 
@@ -22,7 +23,7 @@ const PostDetails = (props) => {
         return (
             <View style={{ marginBottom: Scale(10) }}>
                 <View style={{ flexDirection: 'row' }}>
-                    <Image source={img} style={[styles.iconStyle, { tintColor: colors.txtColor }]} />
+                    <Image source={img} style={[styles.iconStyle, { tintColor: colors.txtColor}]} />
                     <Text style={[commonStyles.fontSize12, { fontFamily: fontFamily.medium }]}>{title}</Text>
                 </View>
                 <Text style={[commonStyles.fontSize10, { marginLeft: Scale(25) }]}>{subtitle}</Text>
